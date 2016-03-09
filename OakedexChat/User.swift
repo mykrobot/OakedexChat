@@ -10,15 +10,24 @@ import Foundation
 
 struct User: Equatable, FirebaseType {
     private let kUsername = "usernameKey"
+    private let kThreads = "threadsKey"
     
     var username: String
+    var threadIDs: [String] = []
+    var threads: [Thread] = []
     var identifier: String?
     var endpoint: String {
         return "users"
     }
     
     var jsonValue: [String:AnyObject] {
-        let json: [String:AnyObject] = [kUsername:username]
+        var json: [String:AnyObject] = [kUsername:username]
+        
+        var threads: [String:AnyObject] = [:]
+        for threadID in threadIDs {
+            threads[threadID] = true
+        }
+        json[kThreads] = threads
         return json
     }
     

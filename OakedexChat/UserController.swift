@@ -13,9 +13,11 @@ class UserController {
     
     static let sharedController = UserController()
     
-    var currentUser: User? {
+//    var currentUser: User!
+    
+    var currentUser: User! {
         get {
-            guard let uid = FirebaseController.base.authData.uid,
+            guard let uid = FirebaseController.base.authData?.uid,
                 userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kUser) as? [String:AnyObject] else { return nil }
             return User(json: userDictionary, identifier: uid)
         }
@@ -73,6 +75,37 @@ class UserController {
     
     static func logOutCurrent() {
         FirebaseController.base.unauth()
-        sharedController.currentUser = nil
+        UserController.sharedController.currentUser = nil
+        print("\(sharedController.currentUser)")
+        
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

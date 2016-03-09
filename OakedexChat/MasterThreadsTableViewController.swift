@@ -21,9 +21,20 @@ class MasterThreadsTableViewController: UITableViewController {
 //            self.fellowTrainers = users.filter({$0 != MessageController.sharedInstance.sender})
 //            self.tableView.reloadData()
 //        }
-        
-        
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if let _ = UserController.sharedController.currentUser {
+            self.tableView.reloadData()
+            
+        } else {
+            self.navigationController?.performSegueWithIdentifier("loginSignupModallySegue", sender: self)
+        }
+    }
+    
+    
+    
     
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -45,12 +56,22 @@ class MasterThreadsTableViewController: UITableViewController {
         cell.textLabel?.text = fellowTrainers[indexPath.row]
         return cell
     }
+    
+    // MARK: - Action Buttons
+    
     @IBAction func profOakButtonTapped(sender: AnyObject) {
-        
         performSegueWithIdentifier("textOakSegue", sender: self)
-        
     }
+    
+    @IBAction func logoutButtonTapped(sender: AnyObject) {
+        UserController.logOutCurrent()
+        self.viewWillAppear(true)
+        print("Logout button tapped")
+    }
+    
 
+    
+    // po UserController.sharedController.currentUser
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -94,13 +115,13 @@ class MasterThreadsTableViewController: UITableViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Run"
         navigationItem.backBarButtonItem = backItem
-        if segue.identifier == "toConversationSegue" {
-            if let destination = segue.destinationViewController as? MessageDetailTableViewController {
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    destination.recipient = self.fellowTrainers[indexPath.row]
-                }
-            }
-        }
+//        if segue.identifier == "toConversationSegue" {
+//            if let destination = segue.destinationViewController as? MessageDetailTableViewController {
+//                if let indexPath = tableView.indexPathForSelectedRow {
+//                    destination.recipient = self.fellowTrainers[indexPath.row]
+//                }
+//            }
+//        }
     }
 }
 

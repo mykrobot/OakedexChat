@@ -57,7 +57,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="3gg-la-CP4">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="hjZ-oT-2RS"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="hjZ-oT-2RS">
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="WjC-CB-igO" id="6uc-4b-2yK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="9Sp-gh-Lxx"/>
                     </navigationItem>
                 </tableViewController>
@@ -95,7 +99,7 @@
                             </subviews>
                         </stackView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="b8E-dT-i7h" style="IBUITableViewCellStyleDefault" id="OcM-6I-31Q">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OakCell" textLabel="b8E-dT-i7h" style="IBUITableViewCellStyleDefault" id="OcM-6I-31Q">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OcM-6I-31Q" id="DwJ-sv-XfU">
@@ -223,7 +227,7 @@
                                     <constraint firstAttribute="height" constant="30" id="8fv-OM-bck"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXk-rH-Fou">
                                 <rect key="frame" x="20" y="238" width="560" height="30"/>
@@ -231,7 +235,7 @@
                                     <constraint firstAttribute="height" constant="30" id="bCe-cR-3ex"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YpI-Yg-FBa">
                                 <rect key="frame" x="20" y="276" width="560" height="30"/>
@@ -239,7 +243,7 @@
                                     <constraint firstAttribute="height" constant="30" id="uZq-xL-wFY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oakedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asT-VN-8q9">
                                 <rect key="frame" x="20" y="106" width="560" height="57"/>
@@ -322,6 +326,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="WjC-CB-igO" kind="relationship" relationship="rootViewController" id="Uvg-Rc-2LZ"/>
+                        <segue destination="Os3-Xa-WXg" kind="presentation" identifier="loginSignupModallySegue" id="BNW-hX-Slt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKw-ky-95h" userLabel="First Responder" sceneMemberID="firstResponder"/>
