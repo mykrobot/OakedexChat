@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B45358031C90CEF6000D07BD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */; };
+		B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */; };
 		B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */; };
 		B4E2584C1C8CB2E500AE8EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */; };
 		B4E2584E1C8CB2E500AE8EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeSearchViewController.swift; sourceTree = "<group>"; };
 		B4E258431C8CB2E500AE8EF4 /* OakedexChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OakedexChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E2584B1C8CB2E500AE8EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				B4E258581C8CB33700AE8EF4 /* User.swift */,
-				B4E2585A1C8CB34500AE8EF4 /* Message.swift */,
 				B4E2585C1C8CB34D00AE8EF4 /* Thread.swift */,
+				B4E2585A1C8CB34500AE8EF4 /* Message.swift */,
 				B4E2585E1C8CB35500AE8EF4 /* Pokemon.swift */,
 			);
 			name = Model;
@@ -170,6 +174,8 @@
 				B4E2587F1C8D499A00AE8EF4 /* MessageDetailTableViewController.swift */,
 				B4E258B61C8E31DE00AE8EF4 /* OakTableViewCell.swift */,
 				B4E258B81C8E7E2800AE8EF4 /* LoginSignupViewController.swift */,
+				B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */,
+				B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -252,7 +258,9 @@
 				B4E258751C8CB40E00AE8EF4 /* MessageController.swift in Sources */,
 				B4E258B71C8E31DE00AE8EF4 /* OakTableViewCell.swift in Sources */,
 				B4E2587E1C8D492D00AE8EF4 /* MasterThreadsTableViewController.swift in Sources */,
+				B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */,
 				B4E258711C8CB3FB00AE8EF4 /* FirebaseController.swift in Sources */,
+				B45358031C90CEF6000D07BD /* SearchResultsTableViewController.swift in Sources */,
 				B4E258731C8CB40500AE8EF4 /* UserController.swift in Sources */,
 				B4E2585D1C8CB34D00AE8EF4 /* Thread.swift in Sources */,
 				B4E258771C8CB41800AE8EF4 /* ThreadController.swift in Sources */,

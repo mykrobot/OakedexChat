@@ -9,34 +9,50 @@
 import Foundation
 
 struct Thread: Equatable, FirebaseType {
-    private let kUsername = "usernameKey"
-    //private let kMessage = "messageKey"
+    private let kUsers = "usersKey"
+    private let kThreadName = "threadNameKey"
     
-    let username: String
-    //var messageArray: [Message]
+    let threadName: String
+    var userIDs: [String] = []
+    var users: [User] = []
     var identifier: String?
     var endpoint: String {
         return "threads"
     }
     
     var jsonValue: [String:AnyObject] {
-        let json: [String:AnyObject] = [kUsername:username]
+        var json: [String:AnyObject] = [kThreadName:threadName]
+        var users: [String:Bool] = [:] // can be a bboo because it is just a placeholder value for the ID number key. We only need the key (uid)
+        for userID in userIDs {
+            users[userID] = true
+        }
+        json[kUsers] = users
         return json
     }
     
-    init(username: String, identifier: String? = nil) {
-        self.username = username
-        self.identifier = identifier
+    init(threadName: String, users: [User]) {
+        self.threadName = threadName
+        self.users = users
+        var identifiers: [String] = []
+        for user in users {
+            if let identifier = user.identifier {
+                identifiers.append(identifier)
+            }
+        }
+        self.userIDs = identifiers
     }
     
     init?(json: [String:AnyObject], identifier: String) {
-        guard let username = json[kUsername] as? String else { return nil}
-        self.username = username
+        guard let threadName = json[kThreadName] as? String else { return nil}
+        self.threadName = threadName
         self.identifier = identifier
+        if let usersDictionary = json[kUsers] as? [String:AnyObject] {
+            userIDs = Array(usersDictionary.keys)
+        }
     }
     
 }
 
 func ==(lhs: Thread, rhs: Thread) -> Bool{
-    return lhs.username == rhs.username && lhs.identifier == rhs.identifier
+    return lhs.threadName == rhs.threadName && lhs.identifier == rhs.identifier
 }

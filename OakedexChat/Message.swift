@@ -11,27 +11,36 @@ import Foundation
 struct Message: Equatable, FirebaseType {
     private let kThread = "threadKey"
     private let kText = "text"
+    private let kSender = "senderKey"
     
     let threadIdentifier: String
     let text: String
+    let senderID: String
+    var sender: User?
     var identifier: String?
     var endpoint: String {
         return "messages"
     }
+    
     var jsonValue: [String: AnyObject] {
-        return [kThread: threadIdentifier, kText:text]
+        return [kThread: threadIdentifier, kText:text, kSender:senderID]
     }
     
-    init(threadIdentifier: String, text: String, identifier: String? = nil) {
+    init(threadIdentifier: String, text: String, senderID: String, identifier: String? = nil) {
         self.threadIdentifier = threadIdentifier
         self.text =  text
+        self.senderID = senderID
         self.identifier = identifier
     }
     
     init?(json: [String: AnyObject], identifier: String) {
-        guard let threadIdentifier = json[kThread] as? String, text = json[kText] as? String else { return nil }
+        guard let threadIdentifier = json[kThread] as? String,
+                  text = json[kText] as? String,
+                  senderID = json[kSender] as? String
+            else { return nil }
         self.threadIdentifier = threadIdentifier
         self.text = text
+        self.senderID = senderID
         self.identifier = identifier
     }
     

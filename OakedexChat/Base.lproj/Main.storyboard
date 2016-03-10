@@ -6,6 +6,98 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Search Results Table View Controller-->
+        <scene sceneID="cL5-yk-DBA">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchReultsTVC" id="DPk-SE-KOw" customClass="SearchResultsTableViewController" customModule="OakedexChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="E67-iV-N99">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultsCell" id="moR-PJ-jij">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="moR-PJ-jij" id="ZMZ-U1-dcp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DPk-SE-KOw" id="Kee-wg-bhD"/>
+                            <outlet property="delegate" destination="DPk-SE-KOw" id="Ea7-l4-34f"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mp9-py-A4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="-1078"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="Lqk-M6-CAN">
+            <objects>
+                <viewController storyboardIdentifier="mainComposeVC" id="FnF-sL-HYN" customClass="ComposeSearchViewController" customModule="OakedexChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dgn-Yg-Gsk"/>
+                        <viewControllerLayoutGuide type="bottom" id="alf-xI-yiT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="27f-fN-Op5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pP6-32-ySi">
+                                <rect key="frame" x="0.0" y="64" width="600" height="569"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allUsersCell" textLabel="TcR-3v-kLV" style="IBUITableViewCellStyleDefault" id="XGz-Ht-Rxj">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XGz-Ht-Rxj" id="t15-7k-5Xx">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TcR-3v-kLV">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FnF-sL-HYN" id="z0H-8d-Uvd"/>
+                                    <outlet property="delegate" destination="FnF-sL-HYN" id="9lO-9f-4be"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="pP6-32-ySi" firstAttribute="leading" secondItem="27f-fN-Op5" secondAttribute="leading" id="Brk-wr-MlB"/>
+                            <constraint firstItem="pP6-32-ySi" firstAttribute="top" secondItem="27f-fN-Op5" secondAttribute="topMargin" constant="64" id="HGX-SE-j9l"/>
+                            <constraint firstAttribute="trailing" secondItem="pP6-32-ySi" secondAttribute="trailing" id="aSb-db-UN9"/>
+                            <constraint firstItem="alf-xI-yiT" firstAttribute="top" secondItem="pP6-32-ySi" secondAttribute="bottom" constant="-33" id="lfL-Mx-vkj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="y5P-Lf-PAE">
+                        <barButtonItem key="rightBarButtonItem" title="Fight!" id="w0D-Dv-cDi">
+                            <connections>
+                                <action selector="fightChatButtonTapped:" destination="FnF-sL-HYN" id="Aat-cI-asF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="composeTableView" destination="pP6-32-ySi" id="BWo-D5-wyr"/>
+                        <outlet property="fightOChatButton" destination="w0D-Dv-cDi" id="Fz6-mj-0jC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x40-34-nDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080" y="-349"/>
+        </scene>
         <!--Master Threads Table View Controller-->
         <scene sceneID="CMA-rA-Iwh">
             <objects>
@@ -62,7 +154,11 @@
                                 <action selector="logoutButtonTapped:" destination="WjC-CB-igO" id="6uc-4b-2yK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="9Sp-gh-Lxx"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="9Sp-gh-Lxx">
+                            <connections>
+                                <segue destination="FnF-sL-HYN" kind="show" identifier="toComposeSegue" id="hGx-l3-r7G"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCv-cl-To9" userLabel="First Responder" sceneMemberID="firstResponder"/>

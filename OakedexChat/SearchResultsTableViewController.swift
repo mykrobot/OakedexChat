@@ -1,58 +1,50 @@
 //
-//  MessageDetailTableViewController.swift
+//  SearchResultsTableViewController.swift
 //  OakedexChat
 //
-//  Created by Michael Mecham on 3/6/16.
+//  Created by Michael Mecham on 3/9/16.
 //  Copyright © 2016 MichaelMecham. All rights reserved.
 //
 
 import UIKit
 
-class MessageDetailTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController {
 
-    var messages: [Message] = []
-    @IBOutlet weak var messageTextField: UITextField!
-    
-    
-//    var messages: [Message] {
-//        return MessageController.sharedController.messages.filter({$0.receiver == (recipient ?? "") || ($0.receiver == MessageController.sharedInstance.sender && $0.sender == (recipient ?? ""))})
-//    }
+    var userResultsDataSource: [User] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadMyTables", name: "messagesChanged", object: nil)
-        
     }
-    
-    @IBAction func sendButtonTapped(sender: AnyObject) {
-//        if let receiver = recipient {
-//            MessageController.createMessage(receiver, text: messageTextField.text!)
-//            self.messageTextField.text = ""
-//        }
-    }
-    
-    func reloadMyTables() {
-        tableView.reloadData()
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if !messages.isEmpty {
-            return messages.count
-        } else {
-            return 1
-        }
+        return userResultsDataSource.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "\(messages[indexPath.row].sender): \(messages[indexPath.row].text)"
+        let cell = tableView.dequeueReusableCellWithIdentifier("searchResultsCell", forIndexPath: indexPath)
+
+        let users = userResultsDataSource[indexPath.row]
+        cell.textLabel?.text = users.username
+        // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+       // let sender = tableView.cellForRowAtIndexPath(indexPath)
+        
+        /////////////////////// COME BACK AND ADD THIS PERSON TO THE MESSAGE CONTACT LIST //////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
     
 

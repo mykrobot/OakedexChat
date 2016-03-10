@@ -10,18 +10,10 @@ import UIKit
 
 class MasterThreadsTableViewController: UITableViewController {
 
-    var fellowTrainers: [String] = []
+    var threadsWithFellowTrainers: [Thread] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        MessageController.observeMessagesForIdentifier(MessageController.sharedInstance.sender) { (_) -> Void in
-//        }
-//        MessageController.observeUsers() {users in
-//            self.fellowTrainers = users.filter({$0 != MessageController.sharedInstance.sender})
-//            self.tableView.reloadData()
-//        }
-    }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -34,28 +26,48 @@ class MasterThreadsTableViewController: UITableViewController {
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let backItem = UIBarButtonItem()
+        backItem.title = "Run"
+        navigationItem.backBarButtonItem = backItem
+        self.tableView.sectionHeaderHeight = 50
+        
+//        MessageController.observeMessagesForIdentifier(MessageController.sharedInstance.sender) { (_) -> Void in
+//        }
+//        MessageController.observeUsers() {users in
+//            self.fellowTrainers = users.filter({$0 != MessageController.sharedInstance.sender})
+//            self.tableView.reloadData()
+//        }
+    }
     
     
+
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCellWithIdentifier("profOakCell")! as UITableViewCell
         header.textLabel?.text = " Prof. Oak"
-        self.tableView.sectionHeaderHeight = 50
+        
         return header
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fellowTrainers.count
+        return threadsWithFellowTrainers.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("trainersThreadsCell", forIndexPath: indexPath)
-        cell.textLabel?.text = fellowTrainers[indexPath.row]
+        let thread = threadsWithFellowTrainers[indexPath.row]
+        cell.textLabel?.text = thread.threadName
         return cell
     }
+    
+//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 50
+//    }
     
     // MARK: - Action Buttons
     
@@ -106,15 +118,12 @@ class MasterThreadsTableViewController: UITableViewController {
         return true
     }
     */
-
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let backItem = UIBarButtonItem()
-        backItem.title = "Run"
-        navigationItem.backBarButtonItem = backItem
+
 //        if segue.identifier == "toConversationSegue" {
 //            if let destination = segue.destinationViewController as? MessageDetailTableViewController {
 //                if let indexPath = tableView.indexPathForSelectedRow {

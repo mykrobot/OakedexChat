@@ -79,6 +79,18 @@ class UserController {
         print("\(sharedController.currentUser)")
         
     }
+    
+    
+    static func fetchAllUsers(completion: (users: [User]) -> Void) {
+        FirebaseController.dataAtEndpoint("users") { (data) -> Void in
+            if let data = data as? [String: AnyObject] {
+                let user = data.flatMap({User(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+                completion(users: user)
+            } else {
+                completion(users: [] )
+            }
+        }
+    }
 }
 
 
