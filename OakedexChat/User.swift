@@ -11,9 +11,16 @@ import Foundation
 struct User: Equatable, FirebaseType {
     private let kUsername = "usernameKey"
     private let kThreads = "threadsKey"
+    private let kUser = "userKey"
     
     var username: String
-    var threadIDs: [String] = []
+    var threadIDs: [String] = [] {
+        didSet {
+            if self.identifier == UserController.sharedController.currentUser.identifier {
+                self.saveUserToDefaults()
+            }
+        }
+    }
     var threads: [Thread] = []
     var identifier: String?
     var endpoint: String {
@@ -37,9 +44,17 @@ struct User: Equatable, FirebaseType {
     }
     
     init?(json: [String:AnyObject], identifier: String) {
-        guard let username = json[kUsername] as? String else { return nil}
+        guard let username = json[kUsername] as? String,
+        threadDictionary = json[kThreads] as? [String: AnyObject] else { return nil}
+        let threads = Array(threadDictionary.keys)
         self.username = username
         self.identifier = identifier
+        self.threadIDs = threads
+    }
+    
+    func saveUserToDefaults() {
+        NSUserDefaults.standardUserDefaults().setValue(self.jsonValue, forKey: kUser)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }
 func ==(lhs: User, rhs: User) -> Bool {

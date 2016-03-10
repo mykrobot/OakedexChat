@@ -18,6 +18,7 @@ class MasterThreadsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let _ = UserController.sharedController.currentUser {
+            
             self.tableView.reloadData()
             
         } else {

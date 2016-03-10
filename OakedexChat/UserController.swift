@@ -13,7 +13,7 @@ class UserController {
     
     static let sharedController = UserController()
     
-//    var currentUser: User!
+    //    var currentUser: User!
     
     var currentUser: User! {
         get {
@@ -24,14 +24,23 @@ class UserController {
         
         set {
             if let newValue = newValue {
-                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
-                NSUserDefaults.standardUserDefaults().synchronize()
+                newValue.saveUserToDefaults()
             } else {
                 NSUserDefaults.standardUserDefaults().removeObjectForKey(kUser)
                 NSUserDefaults.standardUserDefaults().synchronize()
+                
             }
         }
     }
+    
+    
+    
+    ////////////////////// LOOKING FOR WHERE CAMERON IS HAVING LOGIN TROUBLES ////////////////////////////////
+    
+    
+    
+    
+    
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
         FirebaseController.dataAtEndpoint("users/\(identifier)") { (data) -> Void in
