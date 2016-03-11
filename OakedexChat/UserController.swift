@@ -25,6 +25,10 @@ class UserController {
         set {
             if let newValue = newValue {
                 newValue.saveUserToDefaults()
+//                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
+//                NSUserDefaults.standardUserDefaults().synchronize()
+
+                
             } else {
                 NSUserDefaults.standardUserDefaults().removeObjectForKey(kUser)
                 NSUserDefaults.standardUserDefaults().synchronize()
@@ -32,15 +36,6 @@ class UserController {
             }
         }
     }
-    
-    
-    
-    ////////////////////// LOOKING FOR WHERE CAMERON IS HAVING LOGIN TROUBLES ////////////////////////////////
-    
-    
-    
-    
-    
     
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
         FirebaseController.dataAtEndpoint("users/\(identifier)") { (data) -> Void in
@@ -93,7 +88,9 @@ class UserController {
     static func fetchAllUsers(completion: (users: [User]) -> Void) {
         FirebaseController.dataAtEndpoint("users") { (data) -> Void in
             if let data = data as? [String: AnyObject] {
+                print(data)
                 let user = data.flatMap({User(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+                print(user)
                 completion(users: user)
             } else {
                 completion(users: [] )

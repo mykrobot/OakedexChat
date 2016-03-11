@@ -21,6 +21,7 @@ struct User: Equatable, FirebaseType {
             }
         }
     }
+//    var threadIDs: [String] = []
     var threads: [Thread] = []
     var identifier: String?
     var endpoint: String {
@@ -44,8 +45,9 @@ struct User: Equatable, FirebaseType {
     }
     
     init?(json: [String:AnyObject], identifier: String) {
-        guard let username = json[kUsername] as? String,
-        threadDictionary = json[kThreads] as? [String: AnyObject] else { return nil}
+        guard let username = json[kUsername] as? String
+            ,threadDictionary = json[kThreads] as? [String: AnyObject]
+            else { return nil}
         let threads = Array(threadDictionary.keys)
         self.username = username
         self.identifier = identifier

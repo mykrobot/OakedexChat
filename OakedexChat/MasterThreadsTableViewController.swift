@@ -11,13 +11,24 @@ import UIKit
 class MasterThreadsTableViewController: UITableViewController {
 
     var threadsWithFellowTrainers: [Thread] = []
-    
+    //var threadsWithFellowTrainers: [String] = ["this", "is", "a", "mock", "data", "test", "placeholder", "for", "thread", "data"] // MOCK DATA
+    var currentUser = UserController.sharedController.currentUser
     
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let _ = UserController.sharedController.currentUser {
+        if let _ = currentUser {
+            if let identifier = currentUser.identifier {
+                ThreadController.observeThreadsForIdentifier(identifier, completion: { (thread) -> Void in
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.tableView.reloadData()
+                    })
+                    self.threadsWithFellowTrainers = thread
+                })
+                
+            }
+            
             
             self.tableView.reloadData()
             
@@ -34,6 +45,13 @@ class MasterThreadsTableViewController: UITableViewController {
         navigationItem.backBarButtonItem = backItem
         self.tableView.sectionHeaderHeight = 50
         
+        
+       
+        
+        
+        
+
+        
 //        MessageController.observeMessagesForIdentifier(MessageController.sharedInstance.sender) { (_) -> Void in
 //        }
 //        MessageController.observeUsers() {users in
@@ -41,10 +59,9 @@ class MasterThreadsTableViewController: UITableViewController {
 //            self.tableView.reloadData()
 //        }
     }
-    
-    
 
     // MARK: - Table view data source
+    
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCellWithIdentifier("profOakCell")! as UITableViewCell
         header.textLabel?.text = " Prof. Oak"
@@ -62,6 +79,7 @@ class MasterThreadsTableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("trainersThreadsCell", forIndexPath: indexPath)
         let thread = threadsWithFellowTrainers[indexPath.row]
+        //cell.textLabel?.text = thread // MOCK DATA
         cell.textLabel?.text = thread.threadName
         return cell
     }

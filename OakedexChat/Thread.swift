@@ -22,7 +22,7 @@ struct Thread: Equatable, FirebaseType {
     
     var jsonValue: [String:AnyObject] {
         var json: [String:AnyObject] = [kThreadName:threadName]
-        var users: [String:Bool] = [:] // can be a bboo because it is just a placeholder value for the ID number key. We only need the key (uid)
+        var users: [String:AnyObject] = [:] // can be a bboo because it is just a placeholder value for the ID number key. We only need the key (uid)
         for userID in userIDs {
             users[userID] = true
         }
