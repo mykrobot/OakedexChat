@@ -19,15 +19,6 @@ class MasterThreadsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let _ = currentUser {
-            if let identifier = currentUser.identifier {
-                ThreadController.observeThreadsForIdentifier(identifier, completion: { (thread) -> Void in
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.tableView.reloadData()
-                    })
-                    self.threadsWithFellowTrainers = thread
-                })
-                
-            }
             
             
             self.tableView.reloadData()
@@ -45,6 +36,18 @@ class MasterThreadsTableViewController: UITableViewController {
         navigationItem.backBarButtonItem = backItem
         self.tableView.sectionHeaderHeight = 50
         
+        
+        if let identifier = currentUser.identifier {
+            ThreadController.observeThreadsForIdentifier(identifier, completion: { (thread) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
+                self.threadsWithFellowTrainers = thread
+            })
+           self.tableView.reloadData()
+        }
+        
+
         
        
         
@@ -142,16 +145,44 @@ class MasterThreadsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
-//        if segue.identifier == "toConversationSegue" {
-//            if let destination = segue.destinationViewController as? MessageDetailTableViewController {
-//                if let indexPath = tableView.indexPathForSelectedRow {
-//                    destination.recipient = self.fellowTrainers[indexPath.row]
-//                }
-//            }
-//        }
+        if segue.identifier == "toConversationSegue" {
+           let messageDetailTVC = segue.destinationViewController as! MessageDetailTableViewController
+            if let cell = sender as? UITableViewCell, indexPath = tableView.indexPathForCell(cell) {
+                let thread = threadsWithFellowTrainers[indexPath.row]
+                messageDetailTVC.thread = thread
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

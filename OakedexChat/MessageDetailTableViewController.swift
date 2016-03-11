@@ -10,7 +10,12 @@ import UIKit
 
 class MessageDetailTableViewController: UITableViewController {
 
-    var messages: [Message] = []
+    
+    var thread: Thread?
+    //var messages: [Message] = []
+    var messages: [String] = ["this", "is", "a", "mock", "data", "test", "placeholder", "for", "thread", "data"]
+    
+    
     @IBOutlet weak var messageTextField: UITextField!
     
     
@@ -50,8 +55,10 @@ class MessageDetailTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "\(messages[indexPath.row].sender): \(messages[indexPath.row].text)"
-
+        //cell.textLabel?.text = "\(messages[indexPath.row].sender): \(messages[indexPath.row].text)"
+        let message = messages[indexPath.row]
+        cell.textLabel?.text = message
+        
         return cell
     }
     
