@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B45358031C90CEF6000D07BD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */; };
+		B453583A1C93C78A000D07BD /* KnownBugs.strings in Resources */ = {isa = PBXBuildFile; fileRef = B45358391C93C78A000D07BD /* KnownBugs.strings */; };
 		B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */; };
 		B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */; };
 		B4E2584C1C8CB2E500AE8EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		B45358391C93C78A000D07BD /* KnownBugs.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = KnownBugs.strings; sourceTree = "<group>"; };
 		B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeSearchViewController.swift; sourceTree = "<group>"; };
 		B4E258431C8CB2E500AE8EF4 /* OakedexChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OakedexChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				B4E2587A1C8CB42D00AE8EF4 /* ModelControllers */,
 				B4E258811C8D4A0B00AE8EF4 /* ViewControllers */,
 				B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */,
+				B45358391C93C78A000D07BD /* KnownBugs.strings */,
 				B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */,
 				B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */,
 				B4E2584F1C8CB2E500AE8EF4 /* LaunchScreen.storyboard */,
@@ -243,6 +246,7 @@
 				B4E258511C8CB2E500AE8EF4 /* LaunchScreen.storyboard in Resources */,
 				B4E2584E1C8CB2E500AE8EF4 /* Assets.xcassets in Resources */,
 				B4E2584C1C8CB2E500AE8EF4 /* Main.storyboard in Resources */,
+				B453583A1C93C78A000D07BD /* KnownBugs.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,8 +13,11 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var fightOChatButton: UIBarButtonItem!
     @IBOutlet weak var composeTableView: UITableView!
     var searchController: UISearchController!
-    var selectedTrainers: [User] = [UserController.sharedController.currentUser]
-    var selectedTrainersAsAString: [String] = [UserController.sharedController.currentUser.username]
+    
+    
+    
+    var selectedTrainers: [User] = []
+    var selectedTrainersAsAString: [String] = []
     var userDataSource: [User] = []
     
     override func viewWillAppear(animated: Bool) {
@@ -23,6 +26,13 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
                 self.composeTableView.reloadData()
             })
             self.userDataSource = users.filter({$0 != UserController.sharedController.currentUser})
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if let currentUser = UserController.sharedController.currentUser {
+            selectedTrainers.append(currentUser)
+            selectedTrainersAsAString.append(currentUser.username)
         }
     }
 

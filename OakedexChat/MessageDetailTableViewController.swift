@@ -26,7 +26,7 @@ class MessageDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadMyTables", name: "messagesChanged", object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadMyTables", name: "messagesChanged", object: nil)
         
     }
     

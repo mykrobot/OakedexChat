@@ -12,48 +12,39 @@ class MasterThreadsTableViewController: UITableViewController {
 
     var threadsWithFellowTrainers: [Thread] = []
     //var threadsWithFellowTrainers: [String] = ["this", "is", "a", "mock", "data", "test", "placeholder", "for", "thread", "data"] // MOCK DATA
-    var currentUser = UserController.sharedController.currentUser
+    var currentUser: User? {
+        return UserController.sharedController.currentUser
+    }
     
-    
+    func loadThemViews(){
+        //load data here
+        self.tableView.reloadData()
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let _ = currentUser {
-            
-            
-            self.tableView.reloadData()
-            
+        if let currentUser = currentUser {
+            if let identifier = currentUser.identifier {
+                ThreadController.observeThreadsForIdentifier(identifier, completion: { (thread) -> Void in
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        //self.tableView.reloadData() // success
+                    })
+                    self.threadsWithFellowTrainers = thread
+                    self.tableView.reloadData() // success
+                })
+            }
         } else {
+            self.tableView.reloadData()
             self.navigationController?.performSegueWithIdentifier("loginSignupModallySegue", sender: self)
         }
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let backItem = UIBarButtonItem()
         backItem.title = "Run"
         navigationItem.backBarButtonItem = backItem
         self.tableView.sectionHeaderHeight = 50
-        
-        
-        if let identifier = currentUser.identifier {
-            ThreadController.observeThreadsForIdentifier(identifier, completion: { (thread) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView.reloadData()
-                })
-                self.threadsWithFellowTrainers = thread
-            })
-           self.tableView.reloadData()
-        }
-        
-
-        
-       
-        
-        
-        
-
         
 //        MessageController.observeMessagesForIdentifier(MessageController.sharedInstance.sender) { (_) -> Void in
 //        }
@@ -66,8 +57,8 @@ class MasterThreadsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableCellWithIdentifier("profOakCell")! as UITableViewCell
-        header.textLabel?.text = " Prof. Oak"
+        let header = tableView.dequeueReusableCellWithIdentifier("profOakCell") as UITableViewCell?
+        header?.textLabel?.text = " Prof. Oak"
         
         return header
     }
@@ -146,10 +137,10 @@ class MasterThreadsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toConversationSegue" {
-           let messageDetailTVC = segue.destinationViewController as! MessageDetailTableViewController
+           let messageDetailTVC = segue.destinationViewController as? MessageDetailTableViewController
             if let cell = sender as? UITableViewCell, indexPath = tableView.indexPathForCell(cell) {
                 let thread = threadsWithFellowTrainers[indexPath.row]
-                messageDetailTVC.thread = thread
+                messageDetailTVC?.thread = thread
             }
         }
     }

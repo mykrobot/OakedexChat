@@ -13,9 +13,7 @@ class UserController {
     
     static let sharedController = UserController()
     
-    //    var currentUser: User!
-    
-    var currentUser: User! {
+    var currentUser: User? {
         get {
             guard let uid = FirebaseController.base.authData?.uid,
                 userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kUser) as? [String:AnyObject] else { return nil }
@@ -27,8 +25,6 @@ class UserController {
                 newValue.saveUserToDefaults()
 //                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
 //                NSUserDefaults.standardUserDefaults().synchronize()
-
-                
             } else {
                 NSUserDefaults.standardUserDefaults().removeObjectForKey(kUser)
                 NSUserDefaults.standardUserDefaults().synchronize()

@@ -57,9 +57,10 @@ class LoginSignupViewController: UIViewController {
     @IBAction func signupButtonTapped(sender: AnyObject) {
         mode = .Signup
         if fieldsAreValid {
-            UserController.createUser(emailTextField.text!, password: passwordTextField.text!, username: usernameTextField.text!, completion: { (success, user) -> Void in
+            UserController.createUser(emailTextField.text ?? "", password: passwordTextField.text ?? "", username: usernameTextField.text ?? "", completion: { (success, user) -> Void in
                 if success {
                     self.dismissViewControllerAnimated(true, completion: nil)
+                    
                 } else {
                     self.presentValidationAlertWithtitle("Signup Unsuccessful", message: "Please try again")
                     
@@ -76,8 +77,9 @@ class LoginSignupViewController: UIViewController {
     @IBAction func loginButtonTapped(sender: AnyObject) {
         mode = .Login
         if fieldsAreValid {
-            UserController.authenticateUser(emailTextField.text!, password: passwordTextField.text!, completion: { (success, user) -> Void in
+            UserController.authenticateUser(emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: { (success, user) -> Void in
                 if success {
+                    
                     self.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     self.presentValidationAlertWithtitle("Login Unsuccessful", message: "Please try again")

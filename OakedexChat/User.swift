@@ -16,8 +16,10 @@ struct User: Equatable, FirebaseType {
     var username: String
     var threadIDs: [String] = [] {
         didSet {
-            if self.identifier == UserController.sharedController.currentUser.identifier {
-                self.saveUserToDefaults()
+            if let currentUser = UserController.sharedController.currentUser{
+                if self.identifier == currentUser.identifier {
+                    self.saveUserToDefaults()
+                }
             }
         }
     }
