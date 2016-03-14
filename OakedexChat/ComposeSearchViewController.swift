@@ -20,6 +20,20 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     var selectedTrainersAsAString: [String] = []
     var userDataSource: [User] = []
     
+    // MARK: - ViewLifeCycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "Select Trainers"
+        fightOChatButton.enabled = false
+        if let currentUser = UserController.sharedController.currentUser {
+            selectedTrainers.append(currentUser)
+            selectedTrainersAsAString.append(currentUser.username)
+        }
+
+        //setUpSearchController()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         UserController.fetchAllUsers { (users) -> Void in
             dispatch_async(dispatch_get_main_queue(), { _ in
@@ -30,19 +44,9 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func viewWillDisappear(animated: Bool) {
-        if let currentUser = UserController.sharedController.currentUser {
-            selectedTrainers.append(currentUser)
-            selectedTrainersAsAString.append(currentUser.username)
-        }
+        
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = "Select Trainers"
-        fightOChatButton.enabled = false
-
-        //setUpSearchController()
-    }
     
     
     // MARK: - Action Button

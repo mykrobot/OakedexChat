@@ -34,10 +34,7 @@ class LoginSignupViewController: UIViewController {
             }
         }
     }
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,9 +45,6 @@ class LoginSignupViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    
     
     // MARK: - Action Buttons
     
@@ -69,9 +63,6 @@ class LoginSignupViewController: UIViewController {
         } else {
             self.presentValidationAlertWithtitle("Missing Account Info", message: "Please try again, making sure to fill out all fields.")
         }
-        
-        
-        
     }
     
     @IBAction func loginButtonTapped(sender: AnyObject) {
@@ -89,8 +80,14 @@ class LoginSignupViewController: UIViewController {
             self.presentValidationAlertWithtitle("Missing Login Info", message: "Make sure that your email and password fields are both filled in correctly.")
         }
     }
-
     
+    func presentValidationAlertWithtitle(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let alertAction = UIAlertAction(title: "OK", style: .Destructive, handler: nil)
+        alertController.addAction(alertAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
@@ -103,13 +100,6 @@ class LoginSignupViewController: UIViewController {
     */
     
     
-    func presentValidationAlertWithtitle(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        
-        let alertAction = UIAlertAction(title: "OK", style: .Destructive, handler: nil)
-        alertController.addAction(alertAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
     
     
     

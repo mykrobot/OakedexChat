@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/MasterThreadsTableViewController.swift"
-            timestampString = "479446502.735754"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "logoutButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/MasterThreadsTableViewController.swift"
-            timestampString = "479446502.735754"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "logoutButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/MasterThreadsTableViewController.swift"
-            timestampString = "479446502.735754"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "logoutButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -179,102 +179,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OakedexChat/ComposeSearchViewController.swift"
-            timestampString = "479438621.487079"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OakedexChat.ComposeSearchViewController.(viewWillAppear (OakedexChat.ComposeSearchViewController) -&gt; (Swift.Bool) -&gt; ()).(closure #1)"
-                  moduleName = "OakedexChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michaelmecham/Desktop/CodeBank/OakedexChat/OakedexChat/ComposeSearchViewController.swift"
-                  timestampString = "479341468.373965"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OakedexChat.ComposeSearchViewController.(viewWillAppear (OakedexChat.ComposeSearchViewController) -&gt; (Swift.Bool) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "OakedexChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michaelmecham/Desktop/CodeBank/OakedexChat/OakedexChat/ComposeSearchViewController.swift"
-                  timestampString = "479341468.37415"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OakedexChat/ComposeSearchViewController.swift"
-            timestampString = "479438621.487079"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OakedexChat.ComposeSearchViewController.(viewWillAppear (OakedexChat.ComposeSearchViewController) -&gt; (Swift.Bool) -&gt; ()).(closure #1)"
-                  moduleName = "OakedexChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michaelmecham/Desktop/CodeBank/OakedexChat/OakedexChat/ComposeSearchViewController.swift"
-                  timestampString = "479341468.408134"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "388">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OakedexChat.ComposeSearchViewController.(viewWillAppear (OakedexChat.ComposeSearchViewController) -&gt; (Swift.Bool) -&gt; ()).(closure #1).(closure #2)"
-                  moduleName = "OakedexChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michaelmecham/Desktop/CodeBank/OakedexChat/OakedexChat/ComposeSearchViewController.swift"
-                  timestampString = "479341468.408304"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "144">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "OakedexChat/User.swift"
             timestampString = "479438621.487079"
             startingColumnNumber = "9223372036854775807"
@@ -292,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/ThreadController.swift"
-            timestampString = "479354061.987735"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "observeThreadsForIdentifier(_:completion:)"
             landmarkType = "5">
             <Locations>
@@ -340,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/ThreadController.swift"
-            timestampString = "479354064.78988"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "observeThreadsForIdentifier(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -356,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/ThreadController.swift"
-            timestampString = "479363271.126203"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "observeThreadsForIdentifier(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -388,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/ThreadController.swift"
-            timestampString = "479363438.934042"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "observeThreadsForIdentifier(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -404,7 +308,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/ThreadController.swift"
-            timestampString = "479363438.934042"
+            timestampString = "479515568.823365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "observeThreadsForIdentifier(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OakedexChat/ThreadController.swift"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -420,27 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OakedexChat/ThreadController.swift"
-            timestampString = "479363438.934042"
+            timestampString = "479515568.823365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "observeThreadsForIdentifier(_:completion:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OakedexChat/ThreadController.swift"
-            timestampString = "479363391.912012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "observeThreadsForIdentifier(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>

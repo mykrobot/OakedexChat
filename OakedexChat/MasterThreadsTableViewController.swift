@@ -15,10 +15,15 @@ class MasterThreadsTableViewController: UITableViewController {
     var currentUser: User? {
         return UserController.sharedController.currentUser
     }
+
+    // MARK: - ViewLifeCycle
     
-    func loadThemViews(){
-        //load data here
-        self.tableView.reloadData()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let backItem = UIBarButtonItem()
+        backItem.title = "Run"
+        navigationItem.backBarButtonItem = backItem
+        self.tableView.sectionHeaderHeight = 50
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,21 +42,6 @@ class MasterThreadsTableViewController: UITableViewController {
             self.tableView.reloadData()
             self.navigationController?.performSegueWithIdentifier("loginSignupModallySegue", sender: self)
         }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let backItem = UIBarButtonItem()
-        backItem.title = "Run"
-        navigationItem.backBarButtonItem = backItem
-        self.tableView.sectionHeaderHeight = 50
-        
-//        MessageController.observeMessagesForIdentifier(MessageController.sharedInstance.sender) { (_) -> Void in
-//        }
-//        MessageController.observeUsers() {users in
-//            self.fellowTrainers = users.filter({$0 != MessageController.sharedInstance.sender})
-//            self.tableView.reloadData()
-//        }
     }
 
     // MARK: - Table view data source
@@ -75,6 +65,7 @@ class MasterThreadsTableViewController: UITableViewController {
         let thread = threadsWithFellowTrainers[indexPath.row]
         //cell.textLabel?.text = thread // MOCK DATA
         cell.textLabel?.text = thread.threadName
+        
         return cell
     }
     
