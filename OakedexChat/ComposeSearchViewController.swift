@@ -15,7 +15,7 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     var searchController: UISearchController!
     
     
-    
+    var thread: Thread?
     var selectedTrainers: [User] = []
     var selectedTrainersAsAString: [String] = []
     var userDataSource: [User] = []
@@ -30,6 +30,9 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
             selectedTrainers.append(currentUser)
             selectedTrainersAsAString.append(currentUser.username)
         }
+        let backItem = UIBarButtonItem()
+        backItem.title = "Run"
+        navigationItem.backBarButtonItem = backItem
 
         //setUpSearchController()
     }
@@ -54,14 +57,9 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     @IBAction func fightChatButtonTapped(sender: AnyObject) {
         ThreadController.createThread("\(selectedTrainersAsAString.joinWithSeparator(", "))", users: selectedTrainers) { (thread) -> Void in
             if let thread = thread {
-                
-                
-//                ThreadController.createMessage("This is a test from ComposeSearchView line 43", sender: UserController.sharedController.currentUser, thread: thread, completion: { (message) -> Void in
-//                    if let message = message {
-//                        print(message)
-//                    }
-//                })
+                self.thread = thread
                 print(thread)
+                self.performSegueWithIdentifier("composeToThread", sender: self)
             }
         }
         
@@ -129,12 +127,15 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "" {
-//            
-//            
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "composeToThread" {
+            let messagesDetailTVC = segue.destinationViewController as! MessageDetailTableViewController
+            if let thread = thread {
+                messagesDetailTVC.thread = thread
+            }
+            
+        }
+    }
 }
 
 

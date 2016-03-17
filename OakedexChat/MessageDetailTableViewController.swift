@@ -124,9 +124,6 @@ class MessageDetailTableViewController: UITableViewController {
                 cell.textLabel?.text = "\(senderUserName): \(message.text)"
             }
         }
-        
-        
-        
         return cell
     }
     

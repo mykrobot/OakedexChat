@@ -34,7 +34,7 @@
             </objects>
             <point key="canvasLocation" x="1080" y="-1078"/>
         </scene>
-        <!--Title-->
+        <!--Compose Search View Controller-->
         <scene sceneID="Lqk-M6-CAN">
             <objects>
                 <viewController storyboardIdentifier="mainComposeVC" id="FnF-sL-HYN" customClass="ComposeSearchViewController" customModule="OakedexChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +82,7 @@
                             <constraint firstItem="alf-xI-yiT" firstAttribute="top" secondItem="pP6-32-ySi" secondAttribute="bottom" constant="-33" id="lfL-Mx-vkj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="y5P-Lf-PAE">
+                    <navigationItem key="navigationItem" id="y5P-Lf-PAE">
                         <barButtonItem key="rightBarButtonItem" title="Fight!" id="w0D-Dv-cDi">
                             <connections>
                                 <action selector="fightChatButtonTapped:" destination="FnF-sL-HYN" id="Aat-cI-asF"/>
@@ -92,6 +92,7 @@
                     <connections>
                         <outlet property="composeTableView" destination="pP6-32-ySi" id="BWo-D5-wyr"/>
                         <outlet property="fightOChatButton" destination="w0D-Dv-cDi" id="Fz6-mj-0jC"/>
+                        <segue destination="iWm-Mc-9SO" kind="show" identifier="composeToThread" id="jeL-OR-hYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x40-34-nDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -430,4 +431,7 @@
             <point key="canvasLocation" x="268" y="324"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jeL-OR-hYO"/>
+    </inferredMetricsTieBreakers>
 </document>
