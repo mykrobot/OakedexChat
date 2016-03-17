@@ -9,7 +9,6 @@
 import UIKit
 
 class MessageDetailTableViewController: UITableViewController {
-
     
     var thread: Thread?
     var messages: [Message] = []
@@ -37,19 +36,19 @@ class MessageDetailTableViewController: UITableViewController {
                 ThreadController.observeMessageForThreadID(identifier, completion: { (message) -> Void in
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         if let message = message {
-                            self.messages = message
+                            self.messages = message.filter({$0.identifier == identifier})
                         }
-                        
-                        //print("Hey man, MDTVC line 40 ish, \(self.messages)\n\n\n")
-                        for message in self.messages {
-                            print(message.threadIdentifier)
-                            print(message.text)
-                            print(message.sender)
-                            print(message.senderID)
-                            print("\(message.identifier)\n\n")
-                        }
+//                        
+//                        //print("Hey man, MDTVC line 40 ish, \(self.messages)\n\n\n")
+//                        for message in self.messages {
+//                            print(message.threadIdentifier)
+//                            print(message.text)
+//                            print(message.sender)
+//                            print(message.senderID)
+//                            print("\(message.identifier)\n\n")
+//                        }
                         if let message = message {
-                        self.messages = message
+                        self.messages = message.filter({$0.threadIdentifier == identifier})
                             self.tableView.reloadData()
                         }
                         
@@ -85,6 +84,16 @@ class MessageDetailTableViewController: UITableViewController {
 //            MessageController.createMessage(receiver, text: messageTextField.text!)
 //            self.messageTextField.text = ""
 //        }
+        
+        if let text = messageTextField.text, currentUser = UserController.sharedController.currentUser, thread = thread {
+            ThreadController.createMessage(text, sender: currentUser, thread: thread, completion: { (message) -> Void in
+                print(message)
+                self.tableView.reloadData()
+                self.messageTextField.text = ""
+            })
+            
+        }
+        
     }
     
     func reloadMyTables() {
@@ -107,7 +116,16 @@ class MessageDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
         //cell.textLabel?.text = "\(messages[indexPath.row].sender): \(messages[indexPath.row].text)"
         let message = messages[indexPath.row]
-        cell.textLabel?.text = "\(message.sender): \(message.text)"
+        var senderUserName: String = ""
+        UserController.userForIdentifier(message.senderID) { (user) -> Void in
+            if let user = user {
+                senderUserName = user.username
+                
+                cell.textLabel?.text = "\(senderUserName): \(message.text)"
+            }
+        }
+        
+        
         
         return cell
     }
