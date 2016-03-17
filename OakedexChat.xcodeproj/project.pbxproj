@@ -10,6 +10,8 @@
 		B45358031C90CEF6000D07BD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */; };
 		B453583A1C93C78A000D07BD /* KnownBugs.strings in Resources */ = {isa = PBXBuildFile; fileRef = B45358391C93C78A000D07BD /* KnownBugs.strings */; };
 		B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */; };
+		B480C6C81C9B35E400057146 /* AskOakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */; };
+		B480C6CA1C9B453400057146 /* PokedexResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C91C9B453400057146 /* PokedexResultViewController.swift */; };
 		B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */; };
 		B4E2584C1C8CB2E500AE8EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */; };
 		B4E2584E1C8CB2E500AE8EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		B45358391C93C78A000D07BD /* KnownBugs.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = KnownBugs.strings; sourceTree = "<group>"; };
 		B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeSearchViewController.swift; sourceTree = "<group>"; };
+		B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskOakTableViewController.swift; sourceTree = "<group>"; };
+		B480C6C91C9B453400057146 /* PokedexResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexResultViewController.swift; sourceTree = "<group>"; };
 		B4E258431C8CB2E500AE8EF4 /* OakedexChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OakedexChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E2584B1C8CB2E500AE8EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				B4E258B81C8E7E2800AE8EF4 /* LoginSignupViewController.swift */,
 				B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */,
 				B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */,
+				B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */,
+				B480C6C91C9B453400057146 /* PokedexResultViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 				B4E258791C8CB42100AE8EF4 /* NetworkController.swift in Sources */,
 				B4E258801C8D499A00AE8EF4 /* MessageDetailTableViewController.swift in Sources */,
 				B4E258751C8CB40E00AE8EF4 /* MessageController.swift in Sources */,
+				B480C6C81C9B35E400057146 /* AskOakTableViewController.swift in Sources */,
 				B4E258B71C8E31DE00AE8EF4 /* OakTableViewCell.swift in Sources */,
+				B480C6CA1C9B453400057146 /* PokedexResultViewController.swift in Sources */,
 				B4E2587E1C8D492D00AE8EF4 /* MasterThreadsTableViewController.swift in Sources */,
 				B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */,
 				B4E258711C8CB3FB00AE8EF4 /* FirebaseController.swift in Sources */,
