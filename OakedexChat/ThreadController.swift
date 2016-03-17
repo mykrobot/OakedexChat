@@ -35,10 +35,58 @@ class ThreadController {
     }
     
     static func fetchMessagesForThreadID(identifier: String, completion: (message: [Message]) -> Void) {
-        FirebaseController.observeDataAtEndpoint("threads/\(identifier)") { (data) -> Void in
-            print("hey man")
+        FirebaseController.observeDataAtEndpoint("messages") { (data) -> Void in
+            if let messageIdentifierDictionary = data as? [String:AnyObject] {
+                var messages: [Message] = []
+                //let group = dispatch_group_create()
+                for (messageIDentifier, _) in messageIdentifierDictionary {
+                    //dispatch_group_enter(group)
+                    FirebaseController.dataAtEndpoint("messages/\(messageIDentifier)/threadKey/\(identifier)", completion: { (data) -> Void in
+                        if let messageDictionary = data as? [String:AnyObject] {
+                            if let message = Message(json: messageDictionary, identifier: messageIDentifier) {
+                                    messages.append(message)
+                            }
+                            completion(message: messages)
+                        }
+                        completion(message: messages)
+                        //dispatch_group_leave(group)
+                    })
+                }
+            }
         }
     }
+    
+    
+//    static func observeMessagesForFriendshipIdentifier(friendshipIdentifier: String, completion: ([Message]?) -> Void) {
+//        FirebaseController.base.childByAppendingPath("messages").queryOrderedByChild("friendshipId").queryEqualToValue(friendshipIdentifier).queryLimitedToLast(50).observeEventType(.Value, withBlock: { (data) -> Void in
+//            if let messageDictionaries = data.value as? [String: AnyObject] {
+//                let messages = messageDictionaries.flatMap({Message(json: $0.1 as! [String: AnyObject], identifier: $0.0)
+//                })
+//                completion(messages.sort({$0.identifier! < $1.identifier!}))
+//            } else {
+//                completion(nil)
+//            }
+//        })
+//    }
+    
+    static func observeMessageForThreadID(threadID: String, completion: (message: [Message]?) -> Void) {
+        FirebaseController.base.childByAppendingPath("messages").queryOrderedByChild("threadKey").observeEventType(.Value, withBlock: { (data) -> Void in
+            if let messageDictionary = data.value as? [String:AnyObject] {
+                let messages = messageDictionary.flatMap({Message(json: $0.1 as! [String:AnyObject], identifier: $0.0)})
+                completion(message: messages.sort({$0.0.identifier! < $0.1.identifier!}))
+            } else {
+                completion(message: nil)
+            }
+        })
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 //    static func observeMessagesForIdentifier(identifier: String, completion: (message: [Message]) -> Void) {

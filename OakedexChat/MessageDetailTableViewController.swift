@@ -12,8 +12,8 @@ class MessageDetailTableViewController: UITableViewController {
 
     
     var thread: Thread?
-    //var messages: [Message] = []
-    var messages: [String] = ["this", "is", "a", "mock", "data", "test", "placeholder", "for", "thread", "data"]
+    var messages: [Message] = []
+    //var messages: [String] = ["this", "is", "a", "mock", "data", "test", "placeholder", "for", "thread", "data"]
     
     
     @IBOutlet weak var messageTextField: UITextField!
@@ -23,11 +23,61 @@ class MessageDetailTableViewController: UITableViewController {
 //        return MessageController.sharedController.messages.filter({$0.receiver == (recipient ?? "") || ($0.receiver == MessageController.sharedInstance.sender && $0.sender == (recipient ?? ""))})
 //    }
     
+    // MARK: - VC LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadMyTables", name: "messagesChanged", object: nil)
+        ThreadController.fetchMessagesForThreadID("test") { (message) -> Void in
+            print(" view did load Messages: \(message)")
+        }
         
+        if let thread = thread {
+            if let identifier = thread.identifier {
+                ThreadController.observeMessageForThreadID(identifier, completion: { (message) -> Void in
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        if let message = message {
+                            self.messages = message
+                        }
+                        
+                        //print("Hey man, MDTVC line 40 ish, \(self.messages)\n\n\n")
+                        for message in self.messages {
+                            print(message.threadIdentifier)
+                            print(message.text)
+                            print(message.sender)
+                            print(message.senderID)
+                            print("\(message.identifier)\n\n")
+                        }
+                        if let message = message {
+                        self.messages = message
+                            self.tableView.reloadData()
+                        }
+                        
+                    })
+                
+                })
+                
+            }
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        
+
+//        if let thread = thread {
+//            if let identifier = thread.identifier {
+//                ThreadController.fetchMessagesForThreadID(identifier, completion: { (message) -> Void in
+//                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                        self.messages = message
+//                        self.tableView.reloadData()
+//                    })
+//                    
+//                })
+//            }
+//        }
     }
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
@@ -48,7 +98,7 @@ class MessageDetailTableViewController: UITableViewController {
         if !messages.isEmpty {
             return messages.count
         } else {
-            return 1
+            return 0
         }
     }
 
@@ -57,7 +107,7 @@ class MessageDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
         //cell.textLabel?.text = "\(messages[indexPath.row].sender): \(messages[indexPath.row].text)"
         let message = messages[indexPath.row]
-        cell.textLabel?.text = message
+        cell.textLabel?.text = "\(message.sender): \(message.text)"
         
         return cell
     }

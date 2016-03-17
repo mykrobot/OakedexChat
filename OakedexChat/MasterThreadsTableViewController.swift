@@ -128,10 +128,10 @@ class MasterThreadsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toConversationSegue" {
-           let messageDetailTVC = segue.destinationViewController as? MessageDetailTableViewController
+           let messageDetailTVC = segue.destinationViewController as! MessageDetailTableViewController
             if let cell = sender as? UITableViewCell, indexPath = tableView.indexPathForCell(cell) {
                 let thread = threadsWithFellowTrainers[indexPath.row]
-                messageDetailTVC?.thread = thread
+                messageDetailTVC.thread = thread
             }
         }
     }
