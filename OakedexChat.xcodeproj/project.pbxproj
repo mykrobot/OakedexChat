@@ -12,6 +12,7 @@
 		B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */; };
 		B480C6C81C9B35E400057146 /* AskOakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */; };
 		B480C6CA1C9B453400057146 /* PokedexResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C91C9B453400057146 /* PokedexResultViewController.swift */; };
+		B480C6CC1C9B66D700057146 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CB1C9B66D700057146 /* PopoverViewController.swift */; };
 		B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */; };
 		B4E2584C1C8CB2E500AE8EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */; };
 		B4E2584E1C8CB2E500AE8EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeSearchViewController.swift; sourceTree = "<group>"; };
 		B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskOakTableViewController.swift; sourceTree = "<group>"; };
 		B480C6C91C9B453400057146 /* PokedexResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexResultViewController.swift; sourceTree = "<group>"; };
+		B480C6CB1C9B66D700057146 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		B4E258431C8CB2E500AE8EF4 /* OakedexChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OakedexChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E2584B1C8CB2E500AE8EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */,
 				B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */,
 				B480C6C91C9B453400057146 /* PokedexResultViewController.swift */,
+				B480C6CB1C9B66D700057146 /* PopoverViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				B45358031C90CEF6000D07BD /* SearchResultsTableViewController.swift in Sources */,
 				B4E258731C8CB40500AE8EF4 /* UserController.swift in Sources */,
 				B4E2585D1C8CB34D00AE8EF4 /* Thread.swift in Sources */,
+				B480C6CC1C9B66D700057146 /* PopoverViewController.swift in Sources */,
 				B4E258771C8CB41800AE8EF4 /* ThreadController.swift in Sources */,
 				B4E2585B1C8CB34500AE8EF4 /* Message.swift in Sources */,
 				B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */,

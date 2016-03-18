@@ -32,7 +32,7 @@ class AskOakTableViewController: UITableViewController {
         if let text = searchTermTextField.text {
             searchTerm = text
             self.performSegueWithIdentifier("searchySearch", sender: self)
-            
+            searchTermTextField.text = ""
         }
         
     }
