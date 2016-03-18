@@ -56,19 +56,6 @@ class ThreadController {
         }
     }
     
-    
-//    static func observeMessagesForFriendshipIdentifier(friendshipIdentifier: String, completion: ([Message]?) -> Void) {
-//        FirebaseController.base.childByAppendingPath("messages").queryOrderedByChild("friendshipId").queryEqualToValue(friendshipIdentifier).queryLimitedToLast(50).observeEventType(.Value, withBlock: { (data) -> Void in
-//            if let messageDictionaries = data.value as? [String: AnyObject] {
-//                let messages = messageDictionaries.flatMap({Message(json: $0.1 as! [String: AnyObject], identifier: $0.0)
-//                })
-//                completion(messages.sort({$0.identifier! < $1.identifier!}))
-//            } else {
-//                completion(nil)
-//            }
-//        })
-//    }
-    
     static func observeMessageForThreadID(threadID: String, completion: (message: [Message]?) -> Void) {
         FirebaseController.base.childByAppendingPath("messages").queryOrderedByChild("threadKey").observeEventType(.Value, withBlock: { (data) -> Void in
             if let messageDictionary = data.value as? [String:AnyObject] {
@@ -79,34 +66,6 @@ class ThreadController {
             }
         })
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//    static func observeMessagesForIdentifier(identifier: String, completion: (message: [Message]) -> Void) {
-//        FirebaseController.observeDataAtEndpoint("threads/\(identifier)") { (data) -> Void in
-//            if let messageIdentifierDictionary = data as? [String:AnyObject] {
-//                var messages: [Message] = []
-//                for (messageIdentifier, _) in messageIdentifierDictionary {
-//                    FirebaseController.dataAtEndpoint("messages", completion: <#T##(data: AnyObject?) -> Void#>)
-//                }
-//            }
-//        }
-//    }
-    
-    
-    
-//    static func observeMessagesForThreadID(threadID: String, completion) {
-//        
-//    }
-    
-    
     
     static func createThread(threadName: String, users: [User], completion: (thread: Thread?) -> Void) {
         var newThread = Thread(threadName: threadName, users: users)
@@ -138,38 +97,8 @@ class ThreadController {
     static func orderThreads(threads: [Thread]) -> [Thread] {
         return threads.sort({$0.0.identifier > $0.1.identifier})
     }
-    
-    
 }
 
-
-//    static func fetchThreadsForIdentifier(identifier: String, completion: (thread: Thread?) -> Void) {
-//        FirebaseController.base.childByAppendingPath("users/\(identifier)/threadsKey").observeSingleEventOfType(.Value, withBlock: { (snap) -> Void in
-//            if let threadDicitonary = snap.value as? [String:AnyObject] {
-//                if let thread = Thread(json: threadDicitonary, identifier: identifier) {
-//                    completion(thread: thread)
-//                } else {
-//                    completion(thread: nil)
-//                }
-//            } else {
-//                completion(thread: nil)
-//            }
-//        })
-//
-//    }
-
-
-//
-//    static func fetchThreadsForUserID(userID: String, completion : (threads: [Thread]) -> Void) {
-//        FirebaseController.dataAtEndpoint("users/\(userID)/threadsKey") { (data) -> Void in
-//            if let data = data as? [String:AnyObject] {
-//                let thread = data.flatMap({Thread(json: $0.1 as! [String:AnyObject], identifier: $0.0)})
-//                completion(threads: thread)
-//            } else {
-//                completion(threads: [])
-//            }
-//        }
-//    }
 
 
 

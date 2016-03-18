@@ -33,7 +33,6 @@
 		B4E2586E1C8CB3C700AE8EF4 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E2586D1C8CB3C700AE8EF4 /* libicucore.tbd */; };
 		B4E258711C8CB3FB00AE8EF4 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258701C8CB3FB00AE8EF4 /* FirebaseController.swift */; };
 		B4E258731C8CB40500AE8EF4 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258721C8CB40500AE8EF4 /* UserController.swift */; };
-		B4E258751C8CB40E00AE8EF4 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258741C8CB40E00AE8EF4 /* MessageController.swift */; };
 		B4E258771C8CB41800AE8EF4 /* ThreadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258761C8CB41800AE8EF4 /* ThreadController.swift */; };
 		B4E258791C8CB42100AE8EF4 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258781C8CB42100AE8EF4 /* NetworkController.swift */; };
 		B4E2587C1C8CB44D00AE8EF4 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2587B1C8CB44D00AE8EF4 /* PokemonController.swift */; };
@@ -85,7 +84,6 @@
 		B4E2586D1C8CB3C700AE8EF4 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B4E258701C8CB3FB00AE8EF4 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		B4E258721C8CB40500AE8EF4 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		B4E258741C8CB40E00AE8EF4 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		B4E258761C8CB41800AE8EF4 /* ThreadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadController.swift; sourceTree = "<group>"; };
 		B4E258781C8CB42100AE8EF4 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		B4E2587B1C8CB44D00AE8EF4 /* PokemonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 			children = (
 				B4E258721C8CB40500AE8EF4 /* UserController.swift */,
 				B4E258761C8CB41800AE8EF4 /* ThreadController.swift */,
-				B4E258741C8CB40E00AE8EF4 /* MessageController.swift */,
 				B4E2587B1C8CB44D00AE8EF4 /* PokemonController.swift */,
 				B4E258781C8CB42100AE8EF4 /* NetworkController.swift */,
 				B4E258701C8CB3FB00AE8EF4 /* FirebaseController.swift */,
@@ -234,7 +231,7 @@
 				TargetAttributes = {
 					B4E258421C8CB2E500AE8EF4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 4X68QUXMB5;
+						DevelopmentTeam = G68TN4S97G;
 					};
 				};
 			};
@@ -278,7 +275,6 @@
 				B480C6CE1C9B878C00057146 /* MissingNoViewController.swift in Sources */,
 				B4E258791C8CB42100AE8EF4 /* NetworkController.swift in Sources */,
 				B4E258801C8D499A00AE8EF4 /* MessageDetailTableViewController.swift in Sources */,
-				B4E258751C8CB40E00AE8EF4 /* MessageController.swift in Sources */,
 				B480C6C81C9B35E400057146 /* AskOakTableViewController.swift in Sources */,
 				B4E258B71C8E31DE00AE8EF4 /* OakTableViewCell.swift in Sources */,
 				B480C6CA1C9B453400057146 /* PokedexResultViewController.swift in Sources */,
@@ -410,14 +406,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = OakedexChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelMecham.OakedexChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelMecham.OakedexChat1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -425,14 +424,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = OakedexChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelMecham.OakedexChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MichaelMecham.OakedexChat1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

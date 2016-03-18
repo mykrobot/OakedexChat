@@ -12,15 +12,8 @@ class MessageDetailTableViewController: UITableViewController {
     
     var thread: Thread?
     var messages: [Message] = []
-    //var messages: [String] = ["this", "is", "a", "mock", "data", "test", "placeholder", "for", "thread", "data"]
-    
     
     @IBOutlet weak var messageTextField: UITextField!
-    
-    
-//    var messages: [Message] {
-//        return MessageController.sharedController.messages.filter({$0.receiver == (recipient ?? "") || ($0.receiver == MessageController.sharedInstance.sender && $0.sender == (recipient ?? ""))})
-//    }
     
     // MARK: - VC LifeCycle
     
@@ -38,15 +31,6 @@ class MessageDetailTableViewController: UITableViewController {
                             self.messages = message.filter({$0.identifier == identifier})
                             //self.tableView.reloadData()
                         }
-//                        
-//                        //print("Hey man, MDTVC line 40 ish, \(self.messages)\n\n\n")
-//                        for message in self.messages {
-//                            print(message.threadIdentifier)
-//                            print(message.text)
-//                            print(message.sender)
-//                            print(message.senderID)
-//                            print("\(message.identifier)\n\n")
-//                        }
                         if let message = message {
                         self.messages = message.filter({$0.threadIdentifier == identifier})
                             self.tableView.reloadData()

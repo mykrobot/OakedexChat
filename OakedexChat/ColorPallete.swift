@@ -33,4 +33,61 @@ extension UIColor {
         return UIColor(red: 80/255.0, green: 105/255.0, blue: 127/255.0, alpha: 1.0)
     }
     
+    // Green Pallete
+    
+    static func pokeLightestGreen() -> UIColor {
+        return UIColor(red: 119/255.0, green: 168/255.0, blue: 135/255.0, alpha: 1.0)
+    }
+    
+    static func pokeMediumGreen() -> UIColor {
+        return UIColor(red: 93/255.0, green: 165/255.0, blue: 109/255.0, alpha: 1.0)
+    }
+    
+    static func pokeDarkestGreen() -> UIColor {
+        return UIColor(red: 38/255.0, green: 103/255.0, blue: 51/255.0, alpha: 1.0)
+    }
+    
+    static func pokeRed() -> UIColor {
+        return UIColor(red: 241/255.0, green: 92/255.0, blue: 94/255.0, alpha: 1.0)
+    }
+    
+    static func pokeTanHair() -> UIColor {
+        return UIColor(red: 226/255.0, green: 191/255.0, blue: 148/255.0, alpha: 1.0)
+    }
+    
+    
+    // Pixel Pallete
+    
+
+    
+    static func pokeLightestGray() -> UIColor {
+        return UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
+    }
+    
+    static func pokeLighterGray() -> UIColor {
+        return UIColor(red: 192/255.0, green: 192/255.0, blue: 192/255.0, alpha: 1.0)
+    }
+    
+    static func pokeMediumGray() -> UIColor {
+        return UIColor(red: 116/255.0, green: 116/255.0, blue: 116/255.0, alpha: 1.0)
+    }
+    
+    static func pokeHeavyGray() -> UIColor {
+        return UIColor(red: 62/255.0, green: 62/255.0, blue: 62/255.0, alpha: 1.0)
+    }
+    
+    static func pokeBlack() -> UIColor {
+        return UIColor(red: 12/255.0, green: 12/255.0, blue: 12/255.0, alpha: 1.0)
+    }
+    
+
+    
+    
+    
 }
+
+
+
+    
+
+    

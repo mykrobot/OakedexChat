@@ -18,39 +18,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oakedex!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqT-4Y-Gd9">
-                                <rect key="frame" x="178" y="86" width="245" height="84"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBase" translatesAutoresizingMaskIntoConstraints="NO" id="Iz1-vL-umR">
+                                <rect key="frame" x="183" y="28" width="234" height="260"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="245" id="V10-qE-3hw"/>
+                                    <constraint firstAttribute="width" constant="234" id="nf9-ja-oP4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OakéDex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDC-NT-PJy">
+                                <rect key="frame" x="228" y="287" width="145" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="Z28-No-CFu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Chat You!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ys4-eb-L8B">
-                                <rect key="frame" x="95" y="190" width="410" height="21"/>
+                                <rect key="frame" x="95" y="348" width="410" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ckY-2O-FDV"/>
+                                    <constraint firstAttribute="height" constant="21" id="azB-HC-xGw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ys4-eb-L8B" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0EA-ap-VZS"/>
-                            <constraint firstItem="ys4-eb-L8B" firstAttribute="top" secondItem="UqT-4Y-Gd9" secondAttribute="bottom" constant="20" id="6Oo-In-vHQ"/>
-                            <constraint firstItem="UqT-4Y-Gd9" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="66" id="I1P-cb-KIk"/>
-                            <constraint firstItem="UqT-4Y-Gd9" firstAttribute="centerX" secondItem="ys4-eb-L8B" secondAttribute="centerX" id="KnM-fo-y9K"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ys4-eb-L8B" secondAttribute="bottom" constant="389" id="Vzj-6g-ltW"/>
-                            <constraint firstItem="ys4-eb-L8B" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="75" id="Yhu-BN-owR"/>
+                            <constraint firstItem="ys4-eb-L8B" firstAttribute="top" secondItem="NDC-NT-PJy" secondAttribute="bottom" constant="8" symbolic="YES" id="CR7-dH-P6b"/>
+                            <constraint firstItem="ys4-eb-L8B" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="75" id="DUs-a5-htm"/>
+                            <constraint firstItem="NDC-NT-PJy" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="267" id="Prg-hE-d3Q"/>
+                            <constraint firstItem="NDC-NT-PJy" firstAttribute="centerX" secondItem="Iz1-vL-umR" secondAttribute="centerX" id="Q3k-nd-mPE"/>
+                            <constraint firstItem="Iz1-vL-umR" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="Uoi-5w-2PI"/>
+                            <constraint firstItem="ys4-eb-L8B" firstAttribute="top" secondItem="Iz1-vL-umR" secondAttribute="bottom" constant="60" id="Xrr-AN-TRT"/>
+                            <constraint firstItem="NDC-NT-PJy" firstAttribute="centerX" secondItem="ys4-eb-L8B" secondAttribute="centerX" id="isQ-JA-zq7"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ys4-eb-L8B" secondAttribute="bottom" constant="231" id="vXu-v4-l3S"/>
+                            <constraint firstItem="NDC-NT-PJy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wB7-3Z-ZdE"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="13" y="298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconBase" width="2500" height="2500"/>
+    </resources>
 </document>

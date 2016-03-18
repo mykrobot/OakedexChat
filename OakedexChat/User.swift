@@ -23,7 +23,6 @@ struct User: Equatable, FirebaseType {
             }
         }
     }
-//    var threadIDs: [String] = []
     var threads: [Thread] = []
     var identifier: String?
     var endpoint: String {
