@@ -15,6 +15,7 @@
 		B480C6CC1C9B66D700057146 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CB1C9B66D700057146 /* PopoverViewController.swift */; };
 		B480C6CE1C9B878C00057146 /* MissingNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CD1C9B878C00057146 /* MissingNoViewController.swift */; };
 		B480C6D01C9B8FC600057146 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CF1C9B8FC600057146 /* AppearanceController.swift */; };
+		B480C6D21C9BAEBF00057146 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6D11C9BAEBF00057146 /* ColorPallete.swift */; };
 		B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */; };
 		B4E2584C1C8CB2E500AE8EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */; };
 		B4E2584E1C8CB2E500AE8EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		B480C6CB1C9B66D700057146 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		B480C6CD1C9B878C00057146 /* MissingNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingNoViewController.swift; sourceTree = "<group>"; };
 		B480C6CF1C9B8FC600057146 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		B480C6D11C9BAEBF00057146 /* ColorPallete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		B4E258431C8CB2E500AE8EF4 /* OakedexChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OakedexChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E2584B1C8CB2E500AE8EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				B4E258811C8D4A0B00AE8EF4 /* ViewControllers */,
 				B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */,
 				B480C6CF1C9B8FC600057146 /* AppearanceController.swift */,
+				B480C6D11C9BAEBF00057146 /* ColorPallete.swift */,
 				B45358391C93C78A000D07BD /* KnownBugs.strings */,
 				B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */,
 				B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */,
@@ -282,6 +285,7 @@
 				B4E2587E1C8D492D00AE8EF4 /* MasterThreadsTableViewController.swift in Sources */,
 				B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */,
 				B4E258711C8CB3FB00AE8EF4 /* FirebaseController.swift in Sources */,
+				B480C6D21C9BAEBF00057146 /* ColorPallete.swift in Sources */,
 				B45358031C90CEF6000D07BD /* SearchResultsTableViewController.swift in Sources */,
 				B4E258731C8CB40500AE8EF4 /* UserController.swift in Sources */,
 				B4E2585D1C8CB34D00AE8EF4 /* Thread.swift in Sources */,

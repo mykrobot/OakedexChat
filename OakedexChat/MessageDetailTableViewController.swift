@@ -26,7 +26,7 @@ class MessageDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.layer.shouldRasterize = true
+        self.view.layer.shouldRasterize = true
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadMyTables", name: "messagesChanged", object: nil)
 
         

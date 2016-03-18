@@ -18,7 +18,7 @@ class AskOakTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.layer.shouldRasterize = true
+        self.view.layer.shouldRasterize = true
 
     }
 
