@@ -24,6 +24,8 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.view.layer.shouldRasterize = true
+        
         self.navigationItem.title = "Select Trainers"
         fightOChatButton.enabled = false
         if let currentUser = UserController.sharedController.currentUser {

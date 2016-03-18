@@ -13,6 +13,8 @@
 		B480C6C81C9B35E400057146 /* AskOakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */; };
 		B480C6CA1C9B453400057146 /* PokedexResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C91C9B453400057146 /* PokedexResultViewController.swift */; };
 		B480C6CC1C9B66D700057146 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CB1C9B66D700057146 /* PopoverViewController.swift */; };
+		B480C6CE1C9B878C00057146 /* MissingNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CD1C9B878C00057146 /* MissingNoViewController.swift */; };
+		B480C6D01C9B8FC600057146 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CF1C9B8FC600057146 /* AppearanceController.swift */; };
 		B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */; };
 		B4E2584C1C8CB2E500AE8EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */; };
 		B4E2584E1C8CB2E500AE8EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskOakTableViewController.swift; sourceTree = "<group>"; };
 		B480C6C91C9B453400057146 /* PokedexResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexResultViewController.swift; sourceTree = "<group>"; };
 		B480C6CB1C9B66D700057146 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		B480C6CD1C9B878C00057146 /* MissingNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingNoViewController.swift; sourceTree = "<group>"; };
+		B480C6CF1C9B8FC600057146 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		B4E258431C8CB2E500AE8EF4 /* OakedexChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OakedexChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E2584B1C8CB2E500AE8EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				B4E2587A1C8CB42D00AE8EF4 /* ModelControllers */,
 				B4E258811C8D4A0B00AE8EF4 /* ViewControllers */,
 				B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */,
+				B480C6CF1C9B8FC600057146 /* AppearanceController.swift */,
 				B45358391C93C78A000D07BD /* KnownBugs.strings */,
 				B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */,
 				B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */,
@@ -188,6 +193,7 @@
 				B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */,
 				B480C6C91C9B453400057146 /* PokedexResultViewController.swift */,
 				B480C6CB1C9B66D700057146 /* PopoverViewController.swift */,
+				B480C6CD1C9B878C00057146 /* MissingNoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B480C6CE1C9B878C00057146 /* MissingNoViewController.swift in Sources */,
 				B4E258791C8CB42100AE8EF4 /* NetworkController.swift in Sources */,
 				B4E258801C8D499A00AE8EF4 /* MessageDetailTableViewController.swift in Sources */,
 				B4E258751C8CB40E00AE8EF4 /* MessageController.swift in Sources */,
@@ -284,6 +291,7 @@
 				B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */,
 				B4E258591C8CB33700AE8EF4 /* User.swift in Sources */,
 				B4E2585F1C8CB35500AE8EF4 /* Pokemon.swift in Sources */,
+				B480C6D01C9B8FC600057146 /* AppearanceController.swift in Sources */,
 				B4E258B91C8E7E2800AE8EF4 /* LoginSignupViewController.swift in Sources */,
 				B4E2587C1C8CB44D00AE8EF4 /* PokemonController.swift in Sources */,
 			);

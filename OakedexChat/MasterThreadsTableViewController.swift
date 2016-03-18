@@ -20,10 +20,14 @@ class MasterThreadsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         let backItem = UIBarButtonItem()
         backItem.title = "Run"
         navigationItem.backBarButtonItem = backItem
         self.tableView.sectionHeaderHeight = 50
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -37,6 +37,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.view.layer.shouldRasterize = true
         
         pokeBallActivityImage.hidden = true
         viewBackImage.image = UIImage(named: "oakLab")

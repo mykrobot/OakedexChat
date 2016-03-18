@@ -26,10 +26,9 @@ class MessageDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.view.layer.shouldRasterize = true
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadMyTables", name: "messagesChanged", object: nil)
-        ThreadController.fetchMessagesForThreadID("test") { (message) -> Void in
-            print(" view did load Messages: \(message)")
-        }
+
         
         if let thread = thread {
             if let identifier = thread.identifier {
@@ -37,6 +36,7 @@ class MessageDetailTableViewController: UITableViewController {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         if let message = message {
                             self.messages = message.filter({$0.identifier == identifier})
+                            //self.tableView.reloadData()
                         }
 //                        
 //                        //print("Hey man, MDTVC line 40 ish, \(self.messages)\n\n\n")
@@ -62,33 +62,15 @@ class MessageDetailTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        //reloadMyTables()
         
-        
-        
-
-//        if let thread = thread {
-//            if let identifier = thread.identifier {
-//                ThreadController.fetchMessagesForThreadID(identifier, completion: { (message) -> Void in
-//                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                        self.messages = message
-//                        self.tableView.reloadData()
-//                    })
-//                    
-//                })
-//            }
-//        }
     }
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
-//        if let receiver = recipient {
-//            MessageController.createMessage(receiver, text: messageTextField.text!)
-//            self.messageTextField.text = ""
-//        }
-        
         if let text = messageTextField.text, currentUser = UserController.sharedController.currentUser, thread = thread {
             ThreadController.createMessage(text, sender: currentUser, thread: thread, completion: { (message) -> Void in
-                print(message)
-                self.tableView.reloadData()
+                print(message?.text)
+                //self.tableView.reloadData()
                 self.messageTextField.text = ""
             })
             

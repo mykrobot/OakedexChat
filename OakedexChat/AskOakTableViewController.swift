@@ -18,6 +18,7 @@ class AskOakTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.view.layer.shouldRasterize = true
 
     }
 
@@ -30,9 +31,13 @@ class AskOakTableViewController: UITableViewController {
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let text = searchTermTextField.text {
-            searchTerm = text
-            self.performSegueWithIdentifier("searchySearch", sender: self)
-            searchTermTextField.text = ""
+            if text.lowercaseString == "missingno" {
+                self.performSegueWithIdentifier("MissingNoModallySegue", sender: self)
+            } else {
+                searchTerm = text
+                self.performSegueWithIdentifier("searchySearch", sender: self)
+                searchTermTextField.text = ""
+            }
         }
         
     }
@@ -99,6 +104,8 @@ class AskOakTableViewController: UITableViewController {
             if let searchTerm = searchTerm {
                 pokedexResultsVC.searchTerm = searchTerm
             }
+        } else if segue.identifier == "MissingNoModallySegue" {
+            let _ = segue.destinationViewController as! MissingNoViewController
         }
     }
 
