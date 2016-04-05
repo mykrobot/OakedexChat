@@ -6,6 +6,13 @@
 //  Copyright © 2016 MichaelMecham. All rights reserved.
 //
 
+
+
+//users can create an account using the same username as another user. Since Firebase does not authorize by username, or even check to see if the username is available.
+
+//Fatal runtime crash when trying to signup using email that already has an account
+
+
 import UIKit
 
 class MasterThreadsTableViewController: UITableViewController {

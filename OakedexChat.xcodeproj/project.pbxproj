@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B45358031C90CEF6000D07BD /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */; };
-		B453583A1C93C78A000D07BD /* KnownBugs.strings in Resources */ = {isa = PBXBuildFile; fileRef = B45358391C93C78A000D07BD /* KnownBugs.strings */; };
 		B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */; };
 		B480C6C81C9B35E400057146 /* AskOakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */; };
 		B480C6CA1C9B453400057146 /* PokedexResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C91C9B453400057146 /* PokedexResultViewController.swift */; };
@@ -25,7 +24,6 @@
 		B4E2585D1C8CB34D00AE8EF4 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2585C1C8CB34D00AE8EF4 /* Thread.swift */; };
 		B4E2585F1C8CB35500AE8EF4 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2585E1C8CB35500AE8EF4 /* Pokemon.swift */; };
 		B4E258621C8CB38600AE8EF4 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E258611C8CB38600AE8EF4 /* Firebase.framework */; };
-		B4E258631C8CB38600AE8EF4 /* Firebase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4E258611C8CB38600AE8EF4 /* Firebase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4E258661C8CB39400AE8EF4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E258651C8CB39400AE8EF4 /* CFNetwork.framework */; };
 		B4E258681C8CB39E00AE8EF4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E258671C8CB39E00AE8EF4 /* SystemConfiguration.framework */; };
 		B4E2586A1C8CB3A500AE8EF4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E258691C8CB3A500AE8EF4 /* Security.framework */; };
@@ -49,7 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B4E258631C8CB38600AE8EF4 /* Firebase.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
-		B45358391C93C78A000D07BD /* KnownBugs.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = KnownBugs.strings; sourceTree = "<group>"; };
 		B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeSearchViewController.swift; sourceTree = "<group>"; };
 		B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskOakTableViewController.swift; sourceTree = "<group>"; };
 		B480C6C91C9B453400057146 /* PokedexResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexResultViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +132,6 @@
 				B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */,
 				B480C6CF1C9B8FC600057146 /* AppearanceController.swift */,
 				B480C6D11C9BAEBF00057146 /* ColorPallete.swift */,
-				B45358391C93C78A000D07BD /* KnownBugs.strings */,
 				B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */,
 				B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */,
 				B4E2584F1C8CB2E500AE8EF4 /* LaunchScreen.storyboard */,
@@ -261,7 +256,6 @@
 				B4E258511C8CB2E500AE8EF4 /* LaunchScreen.storyboard in Resources */,
 				B4E2584E1C8CB2E500AE8EF4 /* Assets.xcassets in Resources */,
 				B4E2584C1C8CB2E500AE8EF4 /* Main.storyboard in Resources */,
-				B453583A1C93C78A000D07BD /* KnownBugs.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

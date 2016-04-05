@@ -13,6 +13,11 @@ class LoginSignupViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var needAccountButton: UIButton!
+    @IBOutlet weak var alreadyHaveButton: UIButton!
+    @IBOutlet weak var tappyTap: UITapGestureRecognizer!
     
     enum ButtonMode {
         case Signup
@@ -20,7 +25,7 @@ class LoginSignupViewController: UIViewController {
     }
     
     var mode: ButtonMode = .Login
-    var user: User?
+    //var user: User?
     
     var fieldsAreValid: Bool {
         get {
@@ -38,13 +43,16 @@ class LoginSignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.shouldRasterize = true
-
-        // Do any additional setup after loading the view.
+        self.view.addGestureRecognizer(tappyTap)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        changeToLoginView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Action Buttons
@@ -90,15 +98,58 @@ class LoginSignupViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func tapGestureViewTapped(sender: UITapGestureRecognizer) {
+        usernameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
     }
-    */
+    
+    @IBAction func alreadyHaveAccountButtonTapped(sender: AnyObject) {
+        changeToLoginView()
+    }
+    
+    @IBAction func needAccountButtonTapped(sender: AnyObject) {
+        changeToSignupView()
+    }
+
+    // MARK: - View Modes
+    
+    func changeToLoginView() {
+        
+        loginButton.hidden = false
+        needAccountButton.hidden = false
+        alreadyHaveButton.hidden = true
+        takeOff()
+        signupButton.hidden = true
+    }
+    
+    func changeToSignupView() {
+        signupButton.hidden = false
+        
+        needAccountButton.hidden = true
+        alreadyHaveButton.hidden = false
+        bringOn()
+        loginButton.hidden = true
+    }
+    
+    // MARK: - Animations
+    
+    func bringOn() {
+        UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: {
+            self.usernameTextField.alpha = 1
+            self.signupButton.alpha = 1
+            self.loginButton.alpha = 0
+            self.usernameTextField.alpha = 1
+            }, completion: nil)
+    }
+    
+    func takeOff() {
+        UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: {
+            self.usernameTextField.alpha = 0
+            self.signupButton.alpha = 0
+            self.loginButton.alpha = 1
+            }, completion: nil)
+    }
     
     
     

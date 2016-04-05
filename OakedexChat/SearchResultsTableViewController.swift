@@ -12,7 +12,6 @@ class SearchResultsTableViewController: UITableViewController {
 
     var userResultsDataSource: [User] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.shouldRasterize = true
