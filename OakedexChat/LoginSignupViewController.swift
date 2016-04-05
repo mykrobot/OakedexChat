@@ -125,7 +125,6 @@ class LoginSignupViewController: UIViewController {
     
     func changeToSignupView() {
         signupButton.hidden = false
-        
         needAccountButton.hidden = true
         alreadyHaveButton.hidden = false
         bringOn()
