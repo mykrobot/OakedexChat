@@ -16,10 +16,11 @@ class UserController {
     var currentUser: User? {
         get {
             guard let uid = FirebaseController.base.authData?.uid,
-                userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kUser) as? [String:AnyObject] else { return nil }
+                userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kUser) as? [String:AnyObject] else {
+                    return nil }
             return User(json: userDictionary, identifier: uid)
         }
-        
+
         set {
             if let newValue = newValue {
                 newValue.saveUserToDefaults()

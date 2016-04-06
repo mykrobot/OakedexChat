@@ -88,7 +88,10 @@ class MasterThreadsTableViewController: UITableViewController {
     
     @IBAction func logoutButtonTapped(sender: AnyObject) {
         UserController.logOutCurrent()
+        self.tableView.reloadData()
         self.viewWillAppear(true)
+        
+        
         print("Logout button tapped")
     }
     

@@ -14,7 +14,8 @@ struct User: Equatable, FirebaseType {
     private let kUser = "userKey"
     
     var username: String
-    var threadIDs: [String] = [] {
+    var threadIDs: [String] = []
+        {
         didSet {
             if let currentUser = UserController.sharedController.currentUser{
                 if self.identifier == currentUser.identifier {
@@ -47,12 +48,12 @@ struct User: Equatable, FirebaseType {
     
     init?(json: [String:AnyObject], identifier: String) {
         guard let username = json[kUsername] as? String
-            ,threadDictionary = json[kThreads] as? [String: AnyObject]
+            //,threadDictionary = json[kThreads] as? [String: AnyObject]
             else { return nil}
-        let threads = Array(threadDictionary.keys)
+        //let threads = Array(threadDictionary.keys)
         self.username = username
         self.identifier = identifier
-        self.threadIDs = threads
+        //self.threadIDs = threads
     }
     
     func saveUserToDefaults() {
