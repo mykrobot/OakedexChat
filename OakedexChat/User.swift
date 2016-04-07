@@ -15,15 +15,15 @@ struct User: Equatable, FirebaseType {
     
     var username: String
     var threadIDs: [String] = []
-        {
-        didSet {
-            if let currentUser = UserController.sharedController.currentUser{
-                if self.identifier == currentUser.identifier {
-                    self.saveUserToDefaults()
-                }
-            }
-        }
-    }
+//        {
+//        didSet {
+//            if let currentUser = UserController.sharedController.currentUser{
+//                if self.identifier == currentUser.identifier {
+//                    self.saveUserToDefaults()
+//                }
+//            }
+//        }
+//    }
     var threads: [Thread] = []
     var identifier: String?
     var endpoint: String {

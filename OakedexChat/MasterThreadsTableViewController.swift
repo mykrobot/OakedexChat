@@ -45,6 +45,7 @@ class MasterThreadsTableViewController: UITableViewController {
                         //self.tableView.reloadData() // success
                     })
                     self.threadsWithFellowTrainers = thread
+                    UserController.sharedController.currentUser?.threadIDs = thread.flatMap({$0.identifier})
                     self.tableView.reloadData() // success
                 })
             }
@@ -59,7 +60,11 @@ class MasterThreadsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCellWithIdentifier("profOakCell") as UITableViewCell?
         header?.textLabel?.text = " Prof. Oak"
-        
+        header?.layer.cornerRadius = 8
+        header?.contentView.layer.cornerRadius = 8
+        header?.layer.borderColor = UIColor.blackColor().CGColor
+        header?.layer.borderWidth = 2
+        header?.layer.masksToBounds = true
         return header
     }
     
@@ -75,7 +80,11 @@ class MasterThreadsTableViewController: UITableViewController {
         let thread = threadsWithFellowTrainers[indexPath.row]
         //cell.textLabel?.text = thread // MOCK DATA
         cell.textLabel?.text = thread.threadName
-        
+        cell.layer.cornerRadius = 8
+        cell.contentView.layer.cornerRadius = 8
+        cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.layer.borderWidth = 2
+        cell.layer.masksToBounds = true
         return cell
     }
     
@@ -88,7 +97,9 @@ class MasterThreadsTableViewController: UITableViewController {
     
     @IBAction func logoutButtonTapped(sender: AnyObject) {
         UserController.logOutCurrent()
+        self.threadsWithFellowTrainers = []
         self.tableView.reloadData()
+        
         self.viewWillAppear(true)
         
         

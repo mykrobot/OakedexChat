@@ -57,9 +57,7 @@ class MessageDetailTableViewController: UITableViewController {
                 //self.tableView.reloadData()
                 self.messageTextField.text = ""
             })
-            
         }
-        
     }
     
     func reloadMyTables() {
@@ -88,6 +86,13 @@ class MessageDetailTableViewController: UITableViewController {
                 senderUserName = user.username
                 
                 cell.textLabel?.text = "\(senderUserName): \(message.text)"
+                cell.layer.cornerRadius = 8
+                cell.contentView.layer.cornerRadius = 8
+                cell.layer.borderColor = UIColor.blackColor().CGColor
+                cell.layer.borderWidth = 2
+                cell.layer.masksToBounds = true
+            } else {
+                cell.textLabel?.text = "Prof Oak: Oh, it looks like someone has fallen from the converation and can't get back up."
             }
         }
         return cell

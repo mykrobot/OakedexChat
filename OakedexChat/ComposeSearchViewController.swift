@@ -61,6 +61,7 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
             if let thread = thread {
                 self.thread = thread
                 print(thread)
+                print("")
                 self.performSegueWithIdentifier("composeToThread", sender: self)
             }
         }
@@ -78,7 +79,11 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
         let cell = tableView.dequeueReusableCellWithIdentifier("allUsersCell", forIndexPath: indexPath)
         let user = userDataSource[indexPath.row]
         cell.textLabel?.text = user.username
-
+        cell.layer.cornerRadius = 8
+        cell.contentView.layer.cornerRadius = 8
+        cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.layer.borderWidth = 2
+        cell.layer.masksToBounds = true
         return cell
     }
     

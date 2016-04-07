@@ -54,7 +54,11 @@ class AskOakTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("OakCell", forIndexPath: indexPath)
 
         cell.textLabel?.text = "Prof. Oak: Hey, \(UserController.sharedController.currentUser?.username ?? "")! Which pokemon would you like to hear about?"
-
+        cell.layer.cornerRadius = 8
+        cell.contentView.layer.cornerRadius = 8
+        cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.layer.borderWidth = 2
+        cell.layer.masksToBounds = true
         return cell
     }
     
