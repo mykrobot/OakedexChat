@@ -47,13 +47,13 @@ struct User: Equatable, FirebaseType {
     }
     
     init?(json: [String:AnyObject], identifier: String) {
-        guard let username = json[kUsername] as? String
-            //,threadDictionary = json[kThreads] as? [String: AnyObject]
-            else { return nil}
-        //let threads = Array(threadDictionary.keys)
+        guard let username = json[kUsername] as? String else { return nil}
         self.username = username
         self.identifier = identifier
-        //self.threadIDs = threads
+        
+        guard let threadDictionary = json[kThreads] as? [String:AnyObject] else { return }
+        let threads = Array(threadDictionary.keys)
+        self.threadIDs = threads
     }
     
     func saveUserToDefaults() {
