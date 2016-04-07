@@ -78,7 +78,6 @@ class MasterThreadsTableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("trainersThreadsCell", forIndexPath: indexPath)
         let thread = threadsWithFellowTrainers[indexPath.row]
-        //cell.textLabel?.text = thread // MOCK DATA
         cell.textLabel?.text = thread.threadName
         cell.layer.cornerRadius = 8
         cell.contentView.layer.cornerRadius = 8
@@ -86,6 +85,15 @@ class MasterThreadsTableViewController: UITableViewController {
         cell.layer.borderWidth = 2
         cell.layer.masksToBounds = true
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let thread = threadsWithFellowTrainers[indexPath.row]
+            UserController.removeThreadFromUser(thread)
+            threadsWithFellowTrainers.removeAtIndex(indexPath.row)            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
     }
     
     

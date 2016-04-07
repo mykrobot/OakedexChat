@@ -80,6 +80,13 @@ class UserController {
         
     }
     
+    static func removeThreadFromUser(thread: Thread) {
+         let index = UserController.sharedController.currentUser?.threadIDs.indexOf(thread.identifier!)
+            UserController.sharedController.currentUser?.threadIDs.removeAtIndex(index!)
+            UserController.sharedController.currentUser?.save()
+        
+    }
+    
     
     static func fetchAllUsers(completion: (users: [User]) -> Void) {
         FirebaseController.dataAtEndpoint("users") { (data) -> Void in

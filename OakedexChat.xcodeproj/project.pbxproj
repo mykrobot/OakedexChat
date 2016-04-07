@@ -126,12 +126,12 @@
 		B4E258451C8CB2E500AE8EF4 /* OakedexChat */ = {
 			isa = PBXGroup;
 			children = (
-				B4E258601C8CB36200AE8EF4 /* Model */,
-				B4E2587A1C8CB42D00AE8EF4 /* ModelControllers */,
-				B4E258811C8D4A0B00AE8EF4 /* ViewControllers */,
 				B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */,
 				B480C6CF1C9B8FC600057146 /* AppearanceController.swift */,
 				B480C6D11C9BAEBF00057146 /* ColorPallete.swift */,
+				B4E258601C8CB36200AE8EF4 /* Model */,
+				B4E2587A1C8CB42D00AE8EF4 /* ModelControllers */,
+				B4E258811C8D4A0B00AE8EF4 /* ViewControllers */,
 				B4E2584D1C8CB2E500AE8EF4 /* Assets.xcassets */,
 				B4E2584A1C8CB2E500AE8EF4 /* Main.storyboard */,
 				B4E2584F1C8CB2E500AE8EF4 /* LaunchScreen.storyboard */,
