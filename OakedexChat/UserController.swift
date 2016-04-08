@@ -23,8 +23,8 @@ class UserController {
         set {
             if let newValue = newValue {
                 newValue.saveUserToDefaults()
-//                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
-//                NSUserDefaults.standardUserDefaults().synchronize()
+                //                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
+                //                NSUserDefaults.standardUserDefaults().synchronize()
             } else {
                 NSUserDefaults.standardUserDefaults().removeObjectForKey(kUser)
                 NSUserDefaults.standardUserDefaults().synchronize()
@@ -81,10 +81,9 @@ class UserController {
     }
     
     static func removeThreadFromUser(thread: Thread) {
-         let index = UserController.sharedController.currentUser?.threadIDs.indexOf(thread.identifier!)
-            UserController.sharedController.currentUser?.threadIDs.removeAtIndex(index!)
-            UserController.sharedController.currentUser?.save()
-        
+        let index = UserController.sharedController.currentUser?.threadIDs.indexOf(thread.identifier!)
+        UserController.sharedController.currentUser?.threadIDs.removeAtIndex(index!)
+        UserController.sharedController.currentUser?.save()
     }
     
     

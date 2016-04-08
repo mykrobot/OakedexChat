@@ -788,11 +788,11 @@ Oakédex shall not be obligated to indemnify or defend you with respect to any t
             </objects>
             <point key="canvasLocation" x="270" y="-404"/>
         </scene>
-        <!--Messages-->
+        <!--Navigation Controller-->
         <scene sceneID="uFr-Rh-EGx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xAY-eN-OOs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" image="masterBall" id="Wbj-AU-TKT">
+                    <tabBarItem key="tabBarItem" title="" image="pokeChat" id="Wbj-AU-TKT">
                         <inset key="imageInsets" minX="42" minY="42" maxX="42" maxY="42"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -855,7 +855,9 @@ Oakédex shall not be obligated to indemnify or defend you with respect to any t
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-pd-TOr">
                                                     <rect key="frame" x="7" y="7" width="48" height="30"/>
-                                                    <state key="normal" title="Logout"/>
+                                                    <state key="normal" title="Logout">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="logoutButtongTapped:" destination="LfD-Ra-OGn" eventType="touchUpInside" id="hy5-0Q-KkT"/>
                                                     </connections>
@@ -938,11 +940,11 @@ Oakédex shall not be obligated to indemnify or defend you with respect to any t
             </objects>
             <point key="canvasLocation" x="-530" y="324"/>
         </scene>
-        <!--More-->
+        <!--Navigation Controller-->
         <scene sceneID="GSL-fm-VB9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="65u-Ai-IAg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="pokeball" id="AJi-vS-M3v">
+                    <tabBarItem key="tabBarItem" title="" image="moreBall" id="AJi-vS-M3v">
                         <inset key="imageInsets" minX="42" minY="42" maxX="42" maxY="42"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -962,7 +964,8 @@ Oakédex shall not be obligated to indemnify or defend you with respect to any t
     </scenes>
     <resources>
         <image name="MissingNo." width="560" height="560"/>
-        <image name="masterBall" width="200" height="200"/>
+        <image name="moreBall" width="40" height="40"/>
+        <image name="pokeChat" width="40" height="40"/>
         <image name="pokeball" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>

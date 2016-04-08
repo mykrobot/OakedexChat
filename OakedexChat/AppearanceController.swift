@@ -43,6 +43,9 @@ class AppearanceController {
         
         UITextView.appearance().backgroundColor = UIColor.pokeLighterGray()
         
+        UITabBar.appearance().barTintColor = UIColor.pokeBlack()
+        UITabBar.appearance().tintColor = UIColor.ashHatRed()
+        
         
         
         
