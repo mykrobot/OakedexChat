@@ -40,6 +40,8 @@
 		B4E258B91C8E7E2800AE8EF4 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258B81C8E7E2800AE8EF4 /* LoginSignupViewController.swift */; };
 		B4F0CAD71CB81D4F007408D8 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0CAD61CB81D4F007408D8 /* MoreTableViewController.swift */; };
 		B4F0CAD91CB81E8B007408D8 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0CAD81CB81E8B007408D8 /* CreditsViewController.swift */; };
+		B4F0CADB1CB843BA007408D8 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0CADA1CB843BA007408D8 /* Report.swift */; };
+		B4F0CADD1CB85070007408D8 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F0CADC1CB85070007408D8 /* TermsAndConditionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +93,8 @@
 		B4E258B81C8E7E2800AE8EF4 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 		B4F0CAD61CB81D4F007408D8 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		B4F0CAD81CB81E8B007408D8 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		B4F0CADA1CB843BA007408D8 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		B4F0CADC1CB85070007408D8 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 				B4E258581C8CB33700AE8EF4 /* User.swift */,
 				B4E2585C1C8CB34D00AE8EF4 /* Thread.swift */,
 				B4E2585A1C8CB34500AE8EF4 /* Message.swift */,
+				B4F0CADA1CB843BA007408D8 /* Report.swift */,
 				B4E2585E1C8CB35500AE8EF4 /* Pokemon.swift */,
 			);
 			name = Model;
@@ -187,6 +192,7 @@
 				B4E2587F1C8D499A00AE8EF4 /* MessageDetailTableViewController.swift */,
 				B4E258B61C8E31DE00AE8EF4 /* OakTableViewCell.swift */,
 				B4E258B81C8E7E2800AE8EF4 /* LoginSignupViewController.swift */,
+				B4F0CADC1CB85070007408D8 /* TermsAndConditionsViewController.swift */,
 				B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */,
 				B45358021C90CEF6000D07BD /* SearchResultsTableViewController.swift */,
 				B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */,
@@ -292,7 +298,9 @@
 				B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */,
 				B4E258591C8CB33700AE8EF4 /* User.swift in Sources */,
 				B4F0CAD91CB81E8B007408D8 /* CreditsViewController.swift in Sources */,
+				B4F0CADD1CB85070007408D8 /* TermsAndConditionsViewController.swift in Sources */,
 				B4E2585F1C8CB35500AE8EF4 /* Pokemon.swift in Sources */,
+				B4F0CADB1CB843BA007408D8 /* Report.swift in Sources */,
 				B480C6D01C9B8FC600057146 /* AppearanceController.swift in Sources */,
 				B4E258B91C8E7E2800AE8EF4 /* LoginSignupViewController.swift in Sources */,
 				B4E2587C1C8CB44D00AE8EF4 /* PokemonController.swift in Sources */,

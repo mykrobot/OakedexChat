@@ -10,14 +10,21 @@ import UIKit
 
 class MoreTableViewController: UITableViewController {
 
+    @IBOutlet weak var creditsCell: UITableViewCell!
+    @IBOutlet weak var logoutCell: UITableViewCell!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        creditsCell.layer.cornerRadius = 8
+        creditsCell.layer.borderColor = UIColor.blackColor().CGColor
+        creditsCell.layer.borderWidth = 2
+        creditsCell.layer.masksToBounds = true
+        
+        logoutCell.layer.cornerRadius = 8
+        logoutCell.layer.borderColor = UIColor.blackColor().CGColor
+        logoutCell.layer.borderWidth = 2
+        logoutCell.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

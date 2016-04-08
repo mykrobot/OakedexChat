@@ -17,6 +17,7 @@ class LoginSignupViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var needAccountButton: UIButton!
     @IBOutlet weak var alreadyHaveButton: UIButton!
+    @IBOutlet weak var termsAndConditionsButton: UIButton!
     @IBOutlet weak var tappyTap: UITapGestureRecognizer!
     
     enum ButtonMode {
@@ -111,6 +112,10 @@ class LoginSignupViewController: UIViewController {
     @IBAction func needAccountButtonTapped(sender: AnyObject) {
         changeToSignupView()
     }
+    
+    @IBAction func termsAndConditions(sender: AnyObject) {
+        print("Terms!!!")
+    }
 
     // MARK: - View Modes
     
@@ -121,10 +126,12 @@ class LoginSignupViewController: UIViewController {
         alreadyHaveButton.hidden = true
         takeOff()
         signupButton.hidden = true
+        //termsAndConditionsButton.hidden = true
     }
     
     func changeToSignupView() {
         signupButton.hidden = false
+        //termsAndConditionsButton.hidden = false
         needAccountButton.hidden = true
         alreadyHaveButton.hidden = false
         bringOn()
@@ -137,6 +144,7 @@ class LoginSignupViewController: UIViewController {
         UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: {
             self.usernameTextField.alpha = 1
             self.signupButton.alpha = 1
+            self.termsAndConditionsButton.alpha = 1
             self.loginButton.alpha = 0
             self.usernameTextField.alpha = 1
             }, completion: nil)
@@ -146,53 +154,8 @@ class LoginSignupViewController: UIViewController {
         UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: {
             self.usernameTextField.alpha = 0
             self.signupButton.alpha = 0
+            self.termsAndConditionsButton.alpha = 0
             self.loginButton.alpha = 1
             }, completion: nil)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

@@ -21,6 +21,11 @@ class TermsAndConditionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Action Buttons
+    
+    @IBAction func agreementButtonTapped(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

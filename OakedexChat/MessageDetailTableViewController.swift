@@ -23,15 +23,10 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadMyTables", name: "messagesChanged", object: nil)
         self.navigationItem.title = "75"
         
-        
         if let thread = thread {
             if let identifier = thread.identifier {
                 ThreadController.observeMessageForThreadID(identifier, completion: { (message) -> Void in
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                        if let message = message {
-//                            self.messages = message.filter({$0.identifier == identifier})
-//                            //self.tableView.reloadData()
-//                        }
                         if let message = message {
                             self.messages = message.filter({$0.threadIdentifier == identifier})
                             self.tableView.reloadData()
@@ -53,17 +48,22 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
             ThreadController.createMessage(text, sender: currentUser, thread: thread, completion: { (message) -> Void in
                 print(message?.text)
                 self.messageTextField.text = ""
+                self.navigationController?.title = "75"
             })
         }
     }
     
     @IBAction func reportbuttonTapped(sender: AnyObject) {
         let alertController = UIAlertController(title: "Report Content", message: "Would you like to report this content as inappropriate or objectionable content?", preferredStyle: .ActionSheet)
-        let reportAction = UIAlertAction(title: "Report", style: .Default, handler: nil)
+        let reportAction = UIAlertAction(title: "Report", style: .Default) { (tappedSon) -> Void in
+            if let thread = self.thread {
+              ThreadController.reportThread(thread)
+            }
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alertController.addAction(reportAction)
         alertController.addAction(cancelAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.presentViewController(alertController, animated: true, completion: nil) 
     }
 
     // MARK: - TextField Delegate Methods

@@ -90,6 +90,12 @@ class ThreadController {
         completion(message: message)
     }
     
+    static func reportThread(thread: Thread) {
+        guard let threadID = thread.identifier else { return }
+        var report = Report(threadID: threadID)
+        report.save()
+    }
+    
     static func deleteThread(thread: Thread) {
         thread.delete()
     }

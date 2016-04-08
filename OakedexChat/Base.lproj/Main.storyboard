@@ -45,8 +45,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pP6-32-ySi">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="569"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pP6-32-ySi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allUsersCell" textLabel="TcR-3v-kLV" style="IBUITableViewCellStyleDefault" id="XGz-Ht-Rxj">
@@ -75,10 +75,10 @@
                         </subviews>
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
-                            <constraint firstItem="alf-xI-yiT" firstAttribute="top" secondItem="pP6-32-ySi" secondAttribute="bottom" constant="31" id="6js-v2-fUT"/>
-                            <constraint firstItem="pP6-32-ySi" firstAttribute="top" secondItem="27f-fN-Op5" secondAttribute="top" id="FTK-Zn-mWO"/>
-                            <constraint firstAttribute="trailing" secondItem="pP6-32-ySi" secondAttribute="trailing" id="MDv-pq-DaM"/>
-                            <constraint firstItem="pP6-32-ySi" firstAttribute="leading" secondItem="27f-fN-Op5" secondAttribute="leading" id="V0j-la-b81"/>
+                            <constraint firstAttribute="trailing" secondItem="pP6-32-ySi" secondAttribute="trailing" id="0Q0-kL-koa"/>
+                            <constraint firstItem="alf-xI-yiT" firstAttribute="top" secondItem="pP6-32-ySi" secondAttribute="bottom" id="LhV-Yy-im2"/>
+                            <constraint firstItem="pP6-32-ySi" firstAttribute="leading" secondItem="27f-fN-Op5" secondAttribute="leading" id="Zzk-BC-JDz"/>
+                            <constraint firstItem="pP6-32-ySi" firstAttribute="top" secondItem="27f-fN-Op5" secondAttribute="top" id="gTA-nO-0kI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="y5P-Lf-PAE">
@@ -183,7 +183,7 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Example: Squirtle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9uI-Ik-cXY">
                                     <rect key="frame" x="0.0" y="0.0" width="550" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                                 </textField>
                                 <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCC-Nb-zK4">
                                     <rect key="frame" x="550" y="0.0" width="50" height="44"/>
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LK-QS-lNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536" y="-1065"/>
+            <point key="canvasLocation" x="3348" y="-1065"/>
         </scene>
         <!--Pokedex Result View Controller-->
         <scene sceneID="7EU-bx-Nrj">
@@ -456,7 +456,7 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type something" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SWQ-nA-01L">
                                     <rect key="frame" x="0.0" y="0.0" width="550" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                     <connections>
                                         <outlet property="delegate" destination="iWm-Mc-9SO" id="Jvb-yZ-uPr"/>
                                     </connections>
@@ -551,6 +551,73 @@
             </objects>
             <point key="canvasLocation" x="3300" y="-349"/>
         </scene>
+        <!--Terms And Conditions View Controller-->
+        <scene sceneID="6KB-MH-JNh">
+            <objects>
+                <viewController id="63S-cE-48u" customClass="TermsAndConditionsViewController" customModule="OakedexChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3W6-8c-ErE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jdw-u0-ExF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X7x-6W-3kb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ei-Cr-T4A">
+                                <rect key="frame" x="20" y="550" width="560" height="30"/>
+                                <state key="normal" title="I Agree">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="agreementButtonTapped:" destination="63S-cE-48u" eventType="touchUpInside" id="R0L-qb-Phb"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nUW-H1-uJV">
+                                <rect key="frame" x="20" y="20" width="560" height="522"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Hi there! Thanks for using Oakédex. Oakédex exists to help you to connect and communicate with other Pokémon fans. We want to give you the best experience possible, so please feel free to give us feedback on the App Store after use. In order to use this app, you'll need to agree to the below statement. Just to sum it up for you: don't post anything inappropriate, and recognize the limits of the app. That's about it. Have fun!   Oakédex App End User License Agreement
+This End User License Agreement (“Agreement”) is between you and Oakédex and governs use of this app made available through the Apple App Store. By installing the Oakédex App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Oakédex App.
+In order to ensure Oakédex provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found under each profile.
+1. Parties
+This Agreement is between you and Oakédex only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Oakédex, not Apple, is solely responsible for the Oakédex App and its content.
+2. Privacy
+Oakédex may collect and use information about your usage of the Oakédex App, including certain types of information from and about your device. Oakédex may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Oakédex App.
+3. Limited License
+Oakédex grants you a limited, non-exclusive, non-transferable, revocable license to use the Oakédex App for your personal, non-commercial purposes. You may only use the Oakédex App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+4. Age Restrictions
+By using the Oakédex App, you represent and warrant that (a) you are 18 years of age or older and you agree to be bound by this Agreement; and (b) your use of the Oakédex App does not violate any applicable law or regulation. Your access to the Oakédex App may be terminated without warning if Oakédex believes, in its sole discretion, that you are under the age of 18 years.
+5. Objectionable Content Policy
+Objectionable content may not be submitted to Oakédex, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
+6. Warranty
+Oakédex disclaims all warranties about the Oakédex App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Oakédex, not Apple, shall be solely responsible for such warranty.
+7. Maintenance and Support
+Oakédex does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Oakédex, not Apple, shall be obligated to furnish any such maintenance or support.
+8. Product Claims
+Oakédex, not Apple, is responsible for addressing any claims by you relating to the Oakédex App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Oakédex App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+9. Third Party Intellectual Property Claims
+Oakédex shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Oakédex App. To the extent Oakédex is required to provide indemnification by applicable law, Oakédex, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Oakédex App or your use of it infringes any third party intellectual property right.
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5ei-Cr-T4A" firstAttribute="leading" secondItem="X7x-6W-3kb" secondAttribute="leadingMargin" id="1Yu-nM-lM6"/>
+                            <constraint firstItem="5ei-Cr-T4A" firstAttribute="top" secondItem="nUW-H1-uJV" secondAttribute="bottom" constant="8" symbolic="YES" id="3nD-br-uRc"/>
+                            <constraint firstItem="nUW-H1-uJV" firstAttribute="trailing" secondItem="5ei-Cr-T4A" secondAttribute="trailing" id="62n-zG-44K"/>
+                            <constraint firstItem="nUW-H1-uJV" firstAttribute="top" secondItem="3W6-8c-ErE" secondAttribute="bottom" id="h4I-xk-d1L"/>
+                            <constraint firstItem="nUW-H1-uJV" firstAttribute="leading" secondItem="5ei-Cr-T4A" secondAttribute="leading" id="kFR-BT-voC"/>
+                            <constraint firstAttribute="bottom" secondItem="5ei-Cr-T4A" secondAttribute="bottom" constant="20" symbolic="YES" id="miA-6V-HRg"/>
+                            <constraint firstItem="nUW-H1-uJV" firstAttribute="trailing" secondItem="X7x-6W-3kb" secondAttribute="trailingMargin" id="pdP-7c-exg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0JE-XL-CuR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GFW-eu-doR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="-1078"/>
+        </scene>
         <!--Login Signup View Controller-->
         <scene sceneID="ceg-Lj-CEX">
             <objects>
@@ -569,7 +636,7 @@
                                     <constraint firstAttribute="height" constant="30" id="JP4-h3-Ddf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                                 <connections>
                                     <outlet property="delegate" destination="Os3-Xa-WXg" id="FWe-9L-i6v"/>
                                 </connections>
@@ -580,7 +647,7 @@
                                     <constraint firstAttribute="height" constant="30" id="xQm-aP-cUV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                                 <connections>
                                     <outlet property="delegate" destination="Os3-Xa-WXg" id="4EV-uu-Bev"/>
                                 </connections>
@@ -591,17 +658,11 @@
                                     <constraint firstAttribute="height" constant="30" id="yh9-w8-3r2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Os3-Xa-WXg" id="tmz-nM-rvf"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oakedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asT-VN-8q9">
-                                <rect key="frame" x="20" y="20" width="560" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="leD-LT-UjJ">
                                 <rect key="frame" x="213" y="184" width="174" height="30"/>
                                 <subviews>
@@ -641,7 +702,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61U-Kx-nkJ">
                                         <rect key="frame" x="0.0" y="0.0" width="410" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Need An Account?"/>
+                                        <state key="normal" title="Need An Account?">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="needAccountButtonTapped:" destination="Os3-Xa-WXg" eventType="touchUpInside" id="2FS-gq-UCo"/>
                                         </connections>
@@ -649,17 +712,42 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oU-GV-ZSc">
                                         <rect key="frame" x="410" y="0.0" width="150" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Already Have An Account?"/>
+                                        <state key="normal" title="Already Have An Account?">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="alreadyHaveAccountButtonTapped:" destination="Os3-Xa-WXg" eventType="touchUpInside" id="vEc-iZ-ybN"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-9T-7KV">
+                                <rect key="frame" x="20" y="222" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="F75-NM-pCg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="By signing up, you agree to these terms and conditions.">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="termsAndConditions:" destination="Os3-Xa-WXg" eventType="touchUpInside" id="Vj7-91-Eu3"/>
+                                    <segue destination="63S-cE-48u" kind="presentation" id="FlB-PZ-fs4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oakédex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asT-VN-8q9">
+                                <rect key="frame" x="20" y="20" width="560" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="3XB-9T-7KV" firstAttribute="top" secondItem="leD-LT-UjJ" secondAttribute="bottom" constant="8" id="3Gy-dd-5Px"/>
+                            <constraint firstItem="3XB-9T-7KV" firstAttribute="leading" secondItem="QrC-Uv-cra" secondAttribute="leading" constant="20" id="5H0-gJ-BNt"/>
                             <constraint firstItem="LXk-rH-Fou" firstAttribute="leading" secondItem="YpI-Yg-FBa" secondAttribute="leading" id="8Bw-mg-uZi"/>
+                            <constraint firstAttribute="trailing" secondItem="3XB-9T-7KV" secondAttribute="trailing" constant="20" id="8tz-D2-yhN"/>
                             <constraint firstItem="leD-LT-UjJ" firstAttribute="top" secondItem="YpI-Yg-FBa" secondAttribute="bottom" constant="8" symbolic="YES" id="K1o-0Z-a4y"/>
                             <constraint firstItem="asT-VN-8q9" firstAttribute="top" secondItem="IqN-EP-MVM" secondAttribute="bottom" id="M7a-VO-hPS"/>
                             <constraint firstItem="asT-VN-8q9" firstAttribute="leading" secondItem="Us9-oX-kvt" secondAttribute="leading" id="S0R-3a-hiD"/>
@@ -687,6 +775,7 @@
                         <outlet property="passwordTextField" destination="YpI-Yg-FBa" id="XKg-2m-DVA"/>
                         <outlet property="signupButton" destination="1uf-K1-bKU" id="AFS-q0-vsq"/>
                         <outlet property="tappyTap" destination="dMn-82-TjD" id="ZlB-jx-3pb"/>
+                        <outlet property="termsAndConditionsButton" destination="3XB-9T-7KV" id="BBA-Ja-dyf"/>
                         <outlet property="usernameTextField" destination="Us9-oX-kvt" id="HJb-8F-g37"/>
                     </connections>
                 </viewController>
@@ -787,6 +876,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="nLB-nW-0gp"/>
+                    <connections>
+                        <outlet property="creditsCell" destination="fOa-QJ-SFa" id="nl9-Qi-GI8"/>
+                        <outlet property="logoutCell" destination="cij-pp-X0T" id="YMA-H2-mC6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKD-zZ-9Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -873,7 +966,7 @@
         <image name="pokeball" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r0G-ZP-wHX"/>
+        <segue reference="jeL-OR-hYO"/>
         <segue reference="fA9-gG-6LY"/>
     </inferredMetricsTieBreakers>
 </document>
