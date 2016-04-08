@@ -103,16 +103,16 @@ class MasterThreadsTableViewController: UITableViewController {
         performSegueWithIdentifier("textOakSegue", sender: self)
     }
     
-    @IBAction func logoutButtonTapped(sender: AnyObject) {
-        UserController.logOutCurrent()
-        self.threadsWithFellowTrainers = []
-        self.tableView.reloadData()
-        
-        self.viewWillAppear(true)
-        
-        
-        print("Logout button tapped")
-    }
+//    @IBAction func logoutButtonTapped(sender: AnyObject) {
+//        UserController.logOutCurrent()
+//        self.threadsWithFellowTrainers = []
+//        self.tableView.reloadData()
+//        
+//        self.viewWillAppear(true)
+//        
+//        
+//        print("Logout button tapped")
+//    }
     
     // MARK: - Navigation
 

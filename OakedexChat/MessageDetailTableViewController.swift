@@ -44,25 +44,28 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //reloadMyTables()
-        
     }
     
+    // MARK: - Action Buttons
+    
     @IBAction func sendButtonTapped(sender: AnyObject) {
-        
             if let text = messageTextField.text, currentUser = UserController.sharedController.currentUser, thread = thread {
             ThreadController.createMessage(text, sender: currentUser, thread: thread, completion: { (message) -> Void in
                 print(message?.text)
-                //self.tableView.reloadData()
                 self.messageTextField.text = ""
             })
         }
     }
     
-    func reloadMyTables() {
-        tableView.reloadData()
+    @IBAction func reportbuttonTapped(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Report Content", message: "Would you like to report this content as inappropriate or objectionable content?", preferredStyle: .ActionSheet)
+        let reportAction = UIAlertAction(title: "Report", style: .Default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(reportAction)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
+
     // MARK: - TextField Delegate Methods
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

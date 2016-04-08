@@ -41,6 +41,9 @@ class AppearanceController {
         
         UILabel.appearance().textColor = UIColor.pokeBlack()
         
+        UITextView.appearance().backgroundColor = UIColor.pokeLighterGray()
+        
+        
         
         
 
