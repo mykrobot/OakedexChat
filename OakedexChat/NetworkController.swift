@@ -15,7 +15,7 @@ class NetworkController {
         let session = NSURLSession.sharedSession()
         let dataTask = session.dataTaskWithURL(url) { (data, _, error) -> Void in
             if error != nil {
-                print("Error in \(__FUNCTION__) - \(error!.localizedDescription)")
+                print("Error in \(#function) - \(error!.localizedDescription)")
                 completion(data: nil)
             } else {
                 completion(data: data)

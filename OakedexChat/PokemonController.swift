@@ -17,7 +17,7 @@ class PokemonController: NSObject {
         let url = NSURL(string: pokeSearchURL)
         NetworkController.dataAtURL(url!) { (data) -> Void in
             guard let data = data else {
-                print("\(__FUNCTION__) - didn't return data bro)")
+                print("\(#function) - didn't return data bro)")
                 completion(pokemon: nil)
                 return
             }
@@ -31,7 +31,7 @@ class PokemonController: NSObject {
                     completion(pokemon: nil)
                 }
             } catch {
-                print("\(__FUNCTION__) threw some erros dude")
+                print("\(#function) threw some erros dude")
                 completion(pokemon: nil)
             }
         }
