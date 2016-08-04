@@ -10,42 +10,27 @@ import Foundation
 
 class ThreadController {
     
-    static func observeThreadsForIdentifier(identifier: String, completion: (thread: [Thread]) -> Void) {
+    static private var threads: [Thread] = []
+    
+    static func observeThreadsForIdentifier(identifier: String, completion: (threads: [Thread]) -> Void) {
         FirebaseController.observeDataAtEndpoint("users/\(identifier)/threadsKey") { (data) -> Void in
-            if let threadIdentifierDictionary = data as? [String:AnyObject] {
-                var threads: [Thread] = []
-                for (threadIdentifier, _) in threadIdentifierDictionary {
-                    FirebaseController.dataAtEndpoint("threads/\(threadIdentifier)", completion: { (data) -> Void in
-                        if let threadDictionary = data as? [String:AnyObject] {
-                            if let thread = Thread(json: threadDictionary, identifier: threadIdentifier) {
-                                threads.append(thread)
-                            }
-                        }
-                        if threads.count == threadIdentifierDictionary.count {
-                            completion(thread: threads.sort({$0.0.identifier > $0.1.identifier})) // one value either one of them will work
-                        }
-                    })
-                }
-            }
+            guard let threadIdentifierDictionary = data as? [String:AnyObject] else { completion(threads: []); return }
+            processThreadIDs(threadIdentifierDictionary, completion: { (threads) in
+                completion(threads: threads)
+            })
         }
     }
     
-    static func fetchMessagesForThreadID(identifier: String, completion: (message: [Message]) -> Void) {
-        FirebaseController.observeDataAtEndpoint("messages") { (data) -> Void in
-            if let messageIdentifierDictionary = data as? [String:AnyObject] {
-                var messages: [Message] = []
-                for (messageIDentifier, _) in messageIdentifierDictionary {
-                    FirebaseController.dataAtEndpoint("messages/\(messageIDentifier)/threadKey/\(identifier)", completion: { (data) -> Void in
-                        if let messageDictionary = data as? [String:AnyObject] {
-                            if let message = Message(json: messageDictionary, identifier: messageIDentifier) {
-                                messages.append(message)
-                            }
-                            completion(message: messages)
-                        }
-                        completion(message: messages)
-                    })
+    static private func processThreadIDs(threadIdentifierDictionary: [String:AnyObject], completion: (threads: [Thread]) -> Void) {
+        for (threadIdentifier, _) in threadIdentifierDictionary {
+            FirebaseController.dataAtEndpoint("threads/\(threadIdentifier)", completion: { (data) -> Void in
+                guard let threadDictionary = data as? [String:AnyObject],
+                    thread = Thread(json: threadDictionary, identifier: threadIdentifier) else { completion(threads: []); return }
+                self.threads.append(thread)
+                if self.threads.count == threadIdentifierDictionary.count { // checking the count so that it only reloads the tableView once
+                    completion(threads: threads.sort({$0.0.identifier > $0.1.identifier})) // one value either one of them will work
                 }
-            }
+            })
         }
     }
     
@@ -89,10 +74,12 @@ class ThreadController {
         report.save()
     }
     
+    // NEVER USED.
     static func deleteThread(thread: Thread) {
         thread.delete()
     }
     
+    // NEVER USED.
     static func orderThreads(threads: [Thread]) -> [Thread] {
         return threads.sort({$0.0.identifier > $0.1.identifier})
     }

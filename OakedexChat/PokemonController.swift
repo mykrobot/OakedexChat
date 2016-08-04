@@ -15,7 +15,7 @@ class PokemonController: NSObject {
     static func getPokemon(searchTerm: String, completion: (pokemon: Pokemon?) -> Void) {
         let pokeSearchURL = kBaseURL + searchTerm.lowercaseString
         let url = NSURL(string: pokeSearchURL)
-        NetworkController.dataAtURL(url!) { (data) -> Void in
+        PokemonNetworkController.dataAtURL(url!) { (data) -> Void in
             guard let data = data else {
                 print("\(#function) - didn't return data bro)")
                 completion(pokemon: nil)

@@ -19,7 +19,6 @@ class UserController {
                 userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kUser) as? [String:AnyObject] else { return nil }
             return User(json: userDictionary, identifier: uid)
         }
-        
         set {
             if let newValue = newValue {
                 newValue.saveUserToDefaults()
@@ -73,7 +72,6 @@ class UserController {
     static func logOutCurrent() {
         FirebaseController.base.unauth()
         UserController.sharedController.currentUser = nil
-        print("\(sharedController.currentUser)")
     }
     
     static func removeThreadFromUser(thread: Thread) {
@@ -85,9 +83,7 @@ class UserController {
     static func fetchAllUsers(completion: (users: [User]) -> Void) {
         FirebaseController.dataAtEndpoint("users") { (data) -> Void in
             if let data = data as? [String: AnyObject] {
-                print(data)
                 let user = data.flatMap({User(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
-                print(user)
                 completion(users: user)
             } else {
                 completion(users: [] )

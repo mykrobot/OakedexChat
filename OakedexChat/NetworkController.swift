@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetworkController {
+class PokemonNetworkController {
     
     static func dataAtURL(url: NSURL, completion: (data: NSData?) -> Void) {
         
