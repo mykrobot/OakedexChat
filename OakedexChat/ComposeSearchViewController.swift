@@ -25,7 +25,6 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.shouldRasterize = true
-        
         self.navigationItem.title = "Select Trainers"
         fightOChatButton.enabled = false
         if let currentUser = UserController.sharedController.currentUser {
@@ -35,8 +34,6 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
         let backItem = UIBarButtonItem()
         backItem.title = "Run"
         navigationItem.backBarButtonItem = backItem
-
-        //setUpSearchController()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,25 +44,16 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
             self.userDataSource = users.filter({$0 != UserController.sharedController.currentUser})
         }
     }
-    
-    override func viewWillDisappear(animated: Bool) {
-        
-    }
 
-    
-    
     // MARK: - Action Button
     
     @IBAction func fightChatButtonTapped(sender: AnyObject) {
         ThreadController.createThread("\(selectedTrainersAsAString.joinWithSeparator(", "))", users: selectedTrainers) { (thread) -> Void in
             if let thread = thread {
                 self.thread = thread
-                print(thread)
-                print("")
                 self.performSegueWithIdentifier("composeToThread", sender: self)
             }
         }
-        
     }
     
     
@@ -126,7 +114,6 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -136,7 +123,6 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
             if let thread = thread {
                 messagesDetailTVC.thread = thread
             }
-            
         }
     }
 }

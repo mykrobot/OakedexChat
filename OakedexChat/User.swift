@@ -15,15 +15,6 @@ struct User: Equatable, FirebaseType {
     
     var username: String
     var threadIDs: [String] = []
-//        {
-//        didSet {
-//            if let currentUser = UserController.sharedController.currentUser{
-//                if self.identifier == currentUser.identifier {
-//                    self.saveUserToDefaults()
-//                }
-//            }
-//        }
-//    }
     var threads: [Thread] = []
     var identifier: String?
     var endpoint: String {
@@ -32,7 +23,6 @@ struct User: Equatable, FirebaseType {
     
     var jsonValue: [String:AnyObject] {
         var json: [String:AnyObject] = [kUsername:username]
-        
         var threads: [String:AnyObject] = [:]
         for threadID in threadIDs {
             threads[threadID] = true

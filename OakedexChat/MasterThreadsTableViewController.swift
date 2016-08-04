@@ -17,23 +17,21 @@ import UIKit
 
 class MasterThreadsTableViewController: UITableViewController {
 
+    var printCount = 0
+    
     var threadsWithFellowTrainers: [Thread] = []
     var currentUser: User? {
         return UserController.sharedController.currentUser
     }
 
     // MARK: - ViewLifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layer.shouldRasterize = true
-        
         let backItem = UIBarButtonItem()
         backItem.title = "Run"
         navigationItem.backBarButtonItem = backItem
         self.tableView.sectionHeaderHeight = 50
-                
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,6 +45,8 @@ class MasterThreadsTableViewController: UITableViewController {
                     self.threadsWithFellowTrainers = thread
                     UserController.sharedController.currentUser?.threadIDs = thread.flatMap({$0.identifier})
                     self.tableView.reloadData() // success
+                    self.printCount += 1
+                    print(self.printCount)
                 })
             }
         } else {
@@ -69,13 +69,10 @@ class MasterThreadsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return threadsWithFellowTrainers.count
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCellWithIdentifier("trainersThreadsCell", forIndexPath: indexPath)
         let thread = threadsWithFellowTrainers[indexPath.row]
         cell.textLabel?.text = thread.threadName
@@ -96,27 +93,14 @@ class MasterThreadsTableViewController: UITableViewController {
         }
     }
     
-    
     // MARK: - Action Buttons
     
     @IBAction func profOakButtonTapped(sender: AnyObject) {
         performSegueWithIdentifier("textOakSegue", sender: self)
     }
     
-//    @IBAction func logoutButtonTapped(sender: AnyObject) {
-//        UserController.logOutCurrent()
-//        self.threadsWithFellowTrainers = []
-//        self.tableView.reloadData()
-//        
-//        self.viewWillAppear(true)
-//        
-//        
-//        print("Logout button tapped")
-//    }
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toConversationSegue" {
            let messageDetailTVC = segue.destinationViewController as! MessageDetailTableViewController

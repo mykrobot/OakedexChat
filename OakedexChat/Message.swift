@@ -43,7 +43,6 @@ struct Message: Equatable, FirebaseType {
         self.senderID = senderID
         self.identifier = identifier
     }
-    
 }
 func ==(lhs: Message, rhs: Message) -> Bool {
     return lhs.threadIdentifier == rhs.threadIdentifier && lhs.identifier == rhs.identifier

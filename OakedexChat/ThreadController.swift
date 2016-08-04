@@ -14,22 +14,18 @@ class ThreadController {
         FirebaseController.observeDataAtEndpoint("users/\(identifier)/threadsKey") { (data) -> Void in
             if let threadIdentifierDictionary = data as? [String:AnyObject] {
                 var threads: [Thread] = []
-                //let group = dispatch_group_create()
                 for (threadIdentifier, _) in threadIdentifierDictionary {
-                 //   dispatch_group_enter(group)
                     FirebaseController.dataAtEndpoint("threads/\(threadIdentifier)", completion: { (data) -> Void in
                         if let threadDictionary = data as? [String:AnyObject] {
                             if let thread = Thread(json: threadDictionary, identifier: threadIdentifier) {
                                 threads.append(thread)
                             }
-                            //completion(thread: threads) // one value either one of them will work
                         }
-                        completion(thread: threads.sort({$0.0.identifier > $0.1.identifier})) // one value either one of them will work
-                    //    dispatch_group_leave(group)
+                        if threads.count == threadIdentifierDictionary.count {
+                            completion(thread: threads.sort({$0.0.identifier > $0.1.identifier})) // one value either one of them will work
+                        }
                     })
-                    //completion(thread: threads) // zero values
                 }
-                //completion(thread: threads) // zero values
             }
         }
     }
@@ -38,18 +34,15 @@ class ThreadController {
         FirebaseController.observeDataAtEndpoint("messages") { (data) -> Void in
             if let messageIdentifierDictionary = data as? [String:AnyObject] {
                 var messages: [Message] = []
-                //let group = dispatch_group_create()
                 for (messageIDentifier, _) in messageIdentifierDictionary {
-                    //dispatch_group_enter(group)
                     FirebaseController.dataAtEndpoint("messages/\(messageIDentifier)/threadKey/\(identifier)", completion: { (data) -> Void in
                         if let messageDictionary = data as? [String:AnyObject] {
                             if let message = Message(json: messageDictionary, identifier: messageIDentifier) {
-                                    messages.append(message)
+                                messages.append(message)
                             }
                             completion(message: messages)
                         }
                         completion(message: messages)
-                        //dispatch_group_leave(group)
                     })
                 }
             }

@@ -88,19 +88,13 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         typeLabel.layer.borderWidth = 2
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let searchTerm = searchTerm {
             nameThatPokemon(searchTerm)
         }
     }
-    
     
     // MARK: - Animation
     
@@ -131,12 +125,9 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
     func nameThatPokemon(searchTerm: String) {
         rotateBro()
         pokeBallActivityImage.hidden = false
-        
         PokemonController.getPokemon(searchTerm) { (pokemon) -> Void in
             guard let pokeResult = pokemon else { return }
-            
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                
                 self.pokemonIDLabel.hidden = false
                 self.PokemonExperienceLabel.hidden = false
                 self.pokemonHeightLabel.hidden = false
@@ -144,9 +135,8 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
                 self.typeLabel.hidden = false
                 self.movesButton.hidden = false
                 self.statsButton.hidden = false
-                
                 self.pokeBallActivityImage.hidden = true
-                
+        
                 self.pokemonNameLabel.text = pokeResult.name.capitalizedString
                 self.pokemonIDLabel.text = "  ID: \(pokeResult.id)"
                 self.PokemonExperienceLabel.text = "  Exp: \(pokeResult.baseExp)"
@@ -154,15 +144,11 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
                 self.pokemonWeightLabel.text = "  Weight: \(pokeResult.weight)"
                 self.pokemonImageView.image = UIImage(named: "\(pokeResult.id)")
                 self.typeLabel.text = "  Type: \(pokeResult.types.joinWithSeparator(", "))"
-                
                 self.moves = "\(pokeResult.moves.joinWithSeparator(", "))"
                 let statName = pokeResult.stats
                 let baseStat = pokeResult.baseStats
                 let statString = "\(statName[0]): \(baseStat[0])\n\(statName[1]): \(baseStat[1])\n\(statName[2]): \(baseStat[2])\n\(statName[3]): \(baseStat[3])\n\(statName[4]): \(baseStat[4])\n\(statName[5]): \(baseStat[5])\n"
                 self.stats = statString
-//                self.stats = "Stats: \n\(pokeResult.stats.joinWithSeparator("\n"))"
-//                self.baseStats = "Base Stats: \n\(pokeResult.baseStats.joinWithSeparator("\n"))"
-                
                 self.viewBackImage.image = UIImage(named: "back\(arc4random_uniform(4)+1)")
             })
         }
@@ -172,10 +158,8 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         return .None
     }
     
-    
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toMovesPopoverSegue" {
             let popoverVC = segue.destinationViewController as! PopoverViewController
@@ -186,8 +170,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
                     popoverVC.strings = moves
                 }
             }
-        }
-        else if segue.identifier == "toStatsPopoverSegue" {
+        } else if segue.identifier == "toStatsPopoverSegue" {
             let popoverVC = segue.destinationViewController as! PopoverViewController
             let controller = popoverVC.popoverPresentationController
             if let controller = controller {

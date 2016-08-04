@@ -23,12 +23,9 @@ class UserController {
         set {
             if let newValue = newValue {
                 newValue.saveUserToDefaults()
-                //                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
-                //                NSUserDefaults.standardUserDefaults().synchronize()
             } else {
                 NSUserDefaults.standardUserDefaults().removeObjectForKey(kUser)
                 NSUserDefaults.standardUserDefaults().synchronize()
-                
             }
         }
     }
@@ -77,7 +74,6 @@ class UserController {
         FirebaseController.base.unauth()
         UserController.sharedController.currentUser = nil
         print("\(sharedController.currentUser)")
-        
     }
     
     static func removeThreadFromUser(thread: Thread) {
@@ -85,7 +81,6 @@ class UserController {
         UserController.sharedController.currentUser?.threadIDs.removeAtIndex(index!)
         UserController.sharedController.currentUser?.save()
     }
-    
     
     static func fetchAllUsers(completion: (users: [User]) -> Void) {
         FirebaseController.dataAtEndpoint("users") { (data) -> Void in

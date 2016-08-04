@@ -26,8 +26,6 @@ class LoginSignupViewController: UIViewController {
     }
     
     var mode: ButtonMode = .Login
-    //var user: User?
-    
     var fieldsAreValid: Bool {
         get {
             switch mode {
@@ -52,10 +50,6 @@ class LoginSignupViewController: UIViewController {
         changeToLoginView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: - Action Buttons
     
     @IBAction func signupButtonTapped(sender: AnyObject) {
@@ -67,7 +61,6 @@ class LoginSignupViewController: UIViewController {
                     
                 } else {
                     self.presentValidationAlertWithtitle("Signup Unsuccessful", message: "Please try again")
-                    
                 }
             })
         } else {
@@ -80,7 +73,6 @@ class LoginSignupViewController: UIViewController {
         if fieldsAreValid {
             UserController.authenticateUser(emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: { (success, user) -> Void in
                 if success {
-                    
                     self.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     self.presentValidationAlertWithtitle("Login Unsuccessful", message: "Please try again")
@@ -93,7 +85,6 @@ class LoginSignupViewController: UIViewController {
     
     func presentValidationAlertWithtitle(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        
         let alertAction = UIAlertAction(title: "OK", style: .Destructive, handler: nil)
         alertController.addAction(alertAction)
         self.presentViewController(alertController, animated: true, completion: nil)
@@ -120,18 +111,15 @@ class LoginSignupViewController: UIViewController {
     // MARK: - View Modes
     
     func changeToLoginView() {
-        
         loginButton.hidden = false
         needAccountButton.hidden = false
         alreadyHaveButton.hidden = true
         takeOff()
         signupButton.hidden = true
-        //termsAndConditionsButton.hidden = true
     }
     
     func changeToSignupView() {
         signupButton.hidden = false
-        //termsAndConditionsButton.hidden = false
         needAccountButton.hidden = true
         alreadyHaveButton.hidden = false
         bringOn()

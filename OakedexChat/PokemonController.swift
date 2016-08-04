@@ -23,7 +23,6 @@ class PokemonController: NSObject {
             }
             do {
                 let jsonObject = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                
                 if let dictionary = jsonObject as? [String: AnyObject] {
                     let pokemon = Pokemon(jsonDictionary: dictionary)
                     completion(pokemon: pokemon)

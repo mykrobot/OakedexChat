@@ -55,10 +55,7 @@ extension UIColor {
         return UIColor(red: 226/255.0, green: 191/255.0, blue: 148/255.0, alpha: 1.0)
     }
     
-    
     // Pixel Pallete
-    
-
     
     static func pokeLightestGray() -> UIColor {
         return UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
@@ -79,11 +76,6 @@ extension UIColor {
     static func pokeBlack() -> UIColor {
         return UIColor(red: 12/255.0, green: 12/255.0, blue: 12/255.0, alpha: 1.0)
     }
-    
-
-    
-    
-    
 }
 
 
