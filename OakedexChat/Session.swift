@@ -57,6 +57,5 @@ extension Session {
     
     init(start: NSTimeInterval) {
         self.startTime = start
-        print(jsonValue)
     }
 }
