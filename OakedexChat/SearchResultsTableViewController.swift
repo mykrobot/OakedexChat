@@ -14,7 +14,6 @@ class SearchResultsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.shouldRasterize = true
     }
 
     // MARK: - Table view data source

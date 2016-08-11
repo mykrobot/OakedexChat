@@ -28,71 +28,51 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
     var stats: String?
     var baseStats:  String?
     var searchTerm: String?
-    static let sharedController = PokedexResultViewController()
-    
     let boundRect = CGRectMake(0, 0, 1, 1)
-    
     
     //MARK: - VC LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.shouldRasterize = true
-        
         pokeBallActivityImage.hidden = true
         viewBackImage.image = UIImage(named: "oakLab")
-        
-        pokemonNameLabel.layer.cornerRadius = 8
-        pokemonNameLabel.clipsToBounds = true
-        
-        pokemonIDLabel.layer.cornerRadius = 8
-        pokemonIDLabel.clipsToBounds = true
-        pokemonIDLabel.hidden = true
-        pokemonIDLabel.layer.borderColor = UIColor.blackColor().CGColor
-        pokemonIDLabel.layer.borderWidth = 2
-        
-        PokemonExperienceLabel.layer.cornerRadius = 8
-        PokemonExperienceLabel.clipsToBounds = true
-        PokemonExperienceLabel.hidden = true
-        PokemonExperienceLabel.layer.borderColor = UIColor.blackColor().CGColor
-        PokemonExperienceLabel.layer.borderWidth = 2
-        
-        pokemonHeightLabel.layer.cornerRadius = 8
-        pokemonHeightLabel.clipsToBounds = true
-        pokemonHeightLabel.hidden = true
-        pokemonHeightLabel.layer.borderColor = UIColor.blackColor().CGColor
-        pokemonHeightLabel.layer.borderWidth = 2
-        
-        pokemonWeightLabel.layer.cornerRadius = 8
-        pokemonWeightLabel.clipsToBounds = true
-        pokemonWeightLabel.hidden = true
-        pokemonHeightLabel.layer.borderColor = UIColor.blackColor().CGColor
-        pokemonWeightLabel.layer.borderWidth = 2
-        
-        movesButton.layer.cornerRadius = 8
-        movesButton.clipsToBounds = true
-        movesButton.hidden = true
-        movesButton.layer.borderColor = UIColor.blackColor().CGColor
-        movesButton.layer.borderWidth = 2
-        
-        statsButton.layer.cornerRadius = 8
-        statsButton.clipsToBounds = true
-        statsButton.hidden = true
-        statsButton.layer.borderColor = UIColor.blackColor().CGColor
-        statsButton.layer.borderWidth = 2
-        
-        typeLabel.layer.cornerRadius = 8
-        typeLabel.clipsToBounds = true
-        typeLabel.hidden = true
-        typeLabel.layer.borderColor = UIColor.blackColor().CGColor
-        typeLabel.layer.borderWidth = 2
-        
+        setupViews()
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let searchTerm = searchTerm {
             nameThatPokemon(searchTerm)
+        }
+    }
+    
+    // MARK: - Configure Views
+    func setupViews() {
+        pokemonNameLabel.layer.cornerRadius = 8
+        pokemonNameLabel.clipsToBounds = true
+        let labels: [UILabel] = [pokemonIDLabel,pokemonWeightLabel,pokemonHeightLabel,PokemonExperienceLabel,typeLabel]
+        let buttons: [UIButton] = [movesButton,statsButton]
+        configureLabels(labels)
+        configureButtons(buttons)
+    }
+    
+    func configureLabels(labels: [UILabel]) {
+        for label in labels {
+            label.layer.cornerRadius = 8
+            label.clipsToBounds = true
+            label.hidden = true
+            label.layer.borderColor = UIColor.blackColor().CGColor
+            label.layer.borderWidth = 2
+        }
+    }
+    
+    func configureButtons(buttons: [UIButton]) {
+        for button in buttons {
+            button.layer.cornerRadius = 8
+            button.clipsToBounds = true
+            button.hidden = true
+            button.layer.borderColor = UIColor.blackColor().CGColor
+            button.layer.borderWidth = 2
         }
     }
     
@@ -128,30 +108,41 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         PokemonController.getPokemon(searchTerm) { (pokemon) -> Void in
             guard let pokeResult = pokemon else { return }
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.pokemonIDLabel.hidden = false
-                self.PokemonExperienceLabel.hidden = false
-                self.pokemonHeightLabel.hidden = false
-                self.pokemonWeightLabel.hidden = false
-                self.typeLabel.hidden = false
-                self.movesButton.hidden = false
-                self.statsButton.hidden = false
-                self.pokeBallActivityImage.hidden = true
-        
-                self.pokemonNameLabel.text = pokeResult.name.capitalizedString
-                self.pokemonIDLabel.text = "  ID: \(pokeResult.id)"
-                self.PokemonExperienceLabel.text = "  Exp: \(pokeResult.baseExp)"
-                self.pokemonHeightLabel.text = "  Height: \(pokeResult.height)"
-                self.pokemonWeightLabel.text = "  Weight: \(pokeResult.weight)"
-                self.pokemonImageView.image = UIImage(named: "\(pokeResult.id)")
-                self.typeLabel.text = "  Type: \(pokeResult.types.joinWithSeparator(", "))"
-                self.moves = "\(pokeResult.moves.joinWithSeparator(", "))"
-                let statName = pokeResult.stats
-                let baseStat = pokeResult.baseStats
-                let statString = "\(statName[0]): \(baseStat[0])\n\(statName[1]): \(baseStat[1])\n\(statName[2]): \(baseStat[2])\n\(statName[3]): \(baseStat[3])\n\(statName[4]): \(baseStat[4])\n\(statName[5]): \(baseStat[5])\n"
-                self.stats = statString
+                self.unhideLabels()
+                self.setLabelText(pokeResult)
+                self.setButtonText(pokeResult)
                 self.viewBackImage.image = UIImage(named: "back\(arc4random_uniform(4)+1)")
             })
         }
+    }
+    
+    func unhideLabels() {
+        self.pokemonIDLabel.hidden = false
+        self.PokemonExperienceLabel.hidden = false
+        self.pokemonHeightLabel.hidden = false
+        self.pokemonWeightLabel.hidden = false
+        self.typeLabel.hidden = false
+        self.movesButton.hidden = false
+        self.statsButton.hidden = false
+        self.pokeBallActivityImage.hidden = true
+    }
+    
+    func setLabelText(pokeResult: Pokemon) {
+        self.pokemonNameLabel.text = pokeResult.name.capitalizedString
+        self.pokemonIDLabel.text = "  ID: \(pokeResult.id)"
+        self.PokemonExperienceLabel.text = "  Exp: \(pokeResult.baseExp)"
+        self.pokemonHeightLabel.text = "  Height: \(pokeResult.height)"
+        self.pokemonWeightLabel.text = "  Weight: \(pokeResult.weight)"
+        self.pokemonImageView.image = UIImage(named: "\(pokeResult.id)")
+        self.typeLabel.text = "  Type: \(pokeResult.types.joinWithSeparator(", "))"
+    }
+    
+    func setButtonText(pokeResult: Pokemon) {
+        self.moves = "\(pokeResult.moves.joinWithSeparator(", "))"
+        let statName = pokeResult.stats
+        let baseStat = pokeResult.baseStats
+        let statString = "\(statName[0]): \(baseStat[0])\n\(statName[1]): \(baseStat[1])\n\(statName[2]): \(baseStat[2])\n\(statName[3]): \(baseStat[3])\n\(statName[4]): \(baseStat[4])\n\(statName[5]): \(baseStat[5])\n"
+        self.stats = statString
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -161,24 +152,14 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toMovesPopoverSegue" {
-            let popoverVC = segue.destinationViewController as! PopoverViewController
-            let controller = popoverVC.popoverPresentationController
-            if let controller = controller {
+        let popoverVC = segue.destinationViewController as? PopoverViewController
+        let controller = popoverVC?.popoverPresentationController
+        if segue.identifier == "toMovesPopoverSegue", let controller = controller, moves = moves {
                 controller.delegate = self
-                if let moves = moves {
-                    popoverVC.strings = moves
-                }
-            }
-        } else if segue.identifier == "toStatsPopoverSegue" {
-            let popoverVC = segue.destinationViewController as! PopoverViewController
-            let controller = popoverVC.popoverPresentationController
-            if let controller = controller {
+                popoverVC?.strings = moves
+        } else if segue.identifier == "toStatsPopoverSegue", let controller = controller, stats = stats {
                 controller.delegate = self
-                if let stats = stats {
-                    popoverVC.strings = stats
-                }
-            }
+                popoverVC?.strings = stats
         }
     }
 }

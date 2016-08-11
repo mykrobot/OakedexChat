@@ -27,7 +27,6 @@ class MasterThreadsTableViewController: UITableViewController {
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.shouldRasterize = true
         let backItem = UIBarButtonItem()
         backItem.title = "Run"
         navigationItem.backBarButtonItem = backItem
@@ -62,9 +61,10 @@ class MasterThreadsTableViewController: UITableViewController {
         header?.textLabel?.text = " Prof. Oak"
         header?.layer.cornerRadius = 8
         header?.contentView.layer.cornerRadius = 8
-        header?.layer.borderColor = UIColor.blackColor().CGColor
+        header?.layer.borderColor = UIColor.ashHatRed().CGColor
         header?.layer.borderWidth = 2
         header?.layer.masksToBounds = true
+        header?.textLabel?.textColor = .whiteColor()
         return header
     }
     
@@ -78,7 +78,7 @@ class MasterThreadsTableViewController: UITableViewController {
         cell.textLabel?.text = thread.threadName
         cell.layer.cornerRadius = 8
         cell.contentView.layer.cornerRadius = 8
-        cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.layer.borderColor = UIColor.ashHatRed().CGColor
         cell.layer.borderWidth = 2
         cell.layer.masksToBounds = true
         return cell

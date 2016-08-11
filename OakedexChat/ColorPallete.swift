@@ -76,6 +76,11 @@ extension UIColor {
     static func pokeBlack() -> UIColor {
         return UIColor(red: 12/255.0, green: 12/255.0, blue: 12/255.0, alpha: 1.0)
     }
+    
+    
+    static func cellBlack() -> UIColor {
+        return UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.75)
+    }
 }
 
 

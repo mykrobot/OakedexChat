@@ -24,7 +24,6 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.shouldRasterize = true
         self.navigationItem.title = "Select Trainers"
         fightOChatButton.enabled = false
         if let currentUser = UserController.sharedController.currentUser {
@@ -69,7 +68,7 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
         cell.textLabel?.text = user.username
         cell.layer.cornerRadius = 8
         cell.contentView.layer.cornerRadius = 8
-        cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.layer.borderColor = UIColor.ashHatRed().CGColor
         cell.layer.borderWidth = 2
         cell.layer.masksToBounds = true
         return cell

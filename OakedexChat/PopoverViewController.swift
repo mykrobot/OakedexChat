@@ -16,7 +16,6 @@ class PopoverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.shouldRasterize = true
     }
     
     override func viewWillAppear(animated: Bool) {

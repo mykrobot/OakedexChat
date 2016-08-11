@@ -15,14 +15,7 @@ class MoreTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        creditsCell.layer.cornerRadius = 8
-        creditsCell.layer.borderColor = UIColor.blackColor().CGColor
-        creditsCell.layer.borderWidth = 2
-        creditsCell.layer.masksToBounds = true
-        logoutCell.layer.cornerRadius = 8
-        logoutCell.layer.borderColor = UIColor.blackColor().CGColor
-        logoutCell.layer.borderWidth = 2
-        logoutCell.layer.masksToBounds = true
+        setupViews()
     }
 
     // MARK: - Action Buttons
@@ -30,5 +23,18 @@ class MoreTableViewController: UITableViewController {
     @IBAction func logoutButtongTapped(sender: AnyObject) {
         UserController.logOutCurrent()
         tabBarController?.selectedIndex = 0
+    }
+    
+    // MARK: - Configure Views
+    
+    func setupViews() {
+        creditsCell.layer.cornerRadius = 8
+        creditsCell.layer.borderColor = UIColor.ashHatRed().CGColor
+        creditsCell.layer.borderWidth = 2
+        creditsCell.layer.masksToBounds = true
+        logoutCell.layer.cornerRadius = 8
+        logoutCell.layer.borderColor = UIColor.ashHatRed().CGColor
+        logoutCell.layer.borderWidth = 2
+        logoutCell.layer.masksToBounds = true
     }
 }

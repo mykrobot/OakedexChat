@@ -4,57 +4,52 @@
 //
 //  Created by Michael Mecham on 3/17/16.
 //  Copyright © 2016 MichaelMecham. All rights reserved.
-//
 
-import Foundation
 import UIKit
 
-class AppearanceController {
+public class AppearanceController {
     
     static func initializeAppearances() {
-        UINavigationBar.appearance().layer.shouldRasterize = true
-        UILabel.appearance().layer.shouldRasterize = true
-        UIBarButtonItem.appearance().customView?.layer.shouldRasterize = true
-        UIView.appearance().layer.shouldRasterize = true
+        // MARK: - Status Bar
+        UIApplication.sharedApplication().statusBarStyle = .LightContent // changes the battery and carrier color
         
-//        UITableViewCell.appearance().backgroundColor = UIColor(red: 84/255.0, green: 87/255.0, blue: 89/255.0, alpha: 1.0)
-//        UITableViewCell.appearance().textLabel?.textColor = UIColor(red: 76/255.0, green: 166/255.0, blue: 160/255.0, alpha: 1.0)
-//        UITableViewCell.appearance().textLabel?.tintColor = UIColor(red: 76/255.0, green: 166/255.0, blue: 160/255.0, alpha: 1.0)
-//        UINavigationBar.appearance().barTintColor = UIColor(red: 84/255.0, green: 87/255.0, blue: 89/255.0, alpha: 1.0)
-//        //UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor(red: 166/255.0, green: 155/255.0, blue: 135/255.0, alpha: 1.0)]
-//        UINavigationBar.appearance().tintColor = UIColor(red: 166/255.0, green: 155/255.0, blue: 135/255.0, alpha: 1.0)
-//        
-//        UILabel.appearance().textColor = UIColor(red: 76/255.0, green: 166/255.0, blue: 160/255.0, alpha: 1.0)
-//        
-//        //UIView.appearance().tintColor = UIColor(red: 166/255.0, green: 155/255.0, blue: 135/255.0, alpha: 1.0)
-//        UITableView.appearance().backgroundColor = UIColor(red: 166/255.0, green: 155/255.0, blue: 135/255.0, alpha: 1.0)
+        //MARK: - UINavigationBar
+        UINavigationBar.appearance().barTintColor = .pokeBlack() // The solid color of the nav bar.
+        UINavigationBar.appearance().backgroundColor = .pokeBlack() // slight shading under the nav bar.
+        UINavigationBar.appearance().tintColor = .whiteColor() // will affect the color of bar button items on nav bar.
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()] // will affect the color of title
         
-        UINavigationBar.appearance().tintColor = UIColor.pokeLightestGray()
-        UINavigationBar.appearance().barTintColor = UIColor.pokeHeavyGray()
-        UIApplication.sharedApplication().statusBarStyle = .Default
+        // MARK: - UITabBar
+        UITabBar.appearance().barTintColor = .pokeBlack() // solid color of the tab bar
+        UITabBar.appearance().tintColor = .whiteColor() // color of the icons on the tab bar
         
-        UITableView.appearance().backgroundView?.tintColor = UIColor.pokeHeavyGray()
-        UITableView.appearance().backgroundColor = UIColor.pokeHeavyGray()
+        // MARK: - Table View
+        UITableView.appearance().backgroundColor = .blackColor() // The solid color of the background under the cells
         
-        //UITableViewCell.appearance().textLabel?.tintColor = UIColor.pokeBlack()
-        UITableViewCell.appearance().backgroundColor = UIColor.pokeLighterGray()
+        // MARK: Table View Cell
+        UITableViewCell.appearance().backgroundColor = .blackColor() // solid color background for cell
+        //        UITableViewCell.appearance().selectionStyle = .None // doesn't quite doing anything that I am aware of...
+        //        UITableViewCell.appearance().textLabel?.tintColor = <#UIColor#> // yeah, nothing much here...
+        UITableViewCell.appearance().layer.borderColor = UIColor.ashHatRed().CGColor
+        // MARK: - SearchBar
+        //        UISearchBar.appearance().barTintColor = <#UIColor#>
+        //        UISearchBar.appearance().tintColor = <#UIColor#>
         
-        UILabel.appearance().textColor = UIColor.pokeBlack()
-        
-        UITextView.appearance().backgroundColor = UIColor.pokeLighterGray()
-        
-        UITabBar.appearance().barTintColor = UIColor.pokeBlack()
-        UITabBar.appearance().tintColor = UIColor.ashHatRed()
-        
-        
-        
-        
+        // MARK: - UILabel
+        UILabel.appearance().textColor = .whiteColor() // changes text color in labels
+    }
+}
 
-        
-        
-        
-        
 
+extension UITabBarController {
+    public override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+}
+
+extension UINavigationController {
+    public override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 }
 

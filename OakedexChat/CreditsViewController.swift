@@ -16,7 +16,7 @@ class CreditsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         creditTextView.layer.cornerRadius = 8
-        creditTextView.layer.borderColor = UIColor.blackColor().CGColor
+        creditTextView.layer.borderColor = UIColor.ashHatRed().CGColor
         creditTextView.layer.borderWidth = 2
         creditTextView.layer.masksToBounds = true
         creditTextView.text = "\(creditString)"

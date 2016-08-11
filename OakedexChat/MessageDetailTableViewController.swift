@@ -19,7 +19,6 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layer.shouldRasterize = true
         self.navigationItem.title = "75"
         if let thread = thread {
             if let identifier = thread.identifier {
@@ -102,7 +101,7 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
                 cell.textLabel?.text = "\(senderUserName): \(message.text)"
                 cell.layer.cornerRadius = 8
                 cell.contentView.layer.cornerRadius = 8
-                cell.layer.borderColor = UIColor.blackColor().CGColor
+                cell.layer.borderColor = UIColor.ashHatRed().CGColor
                 cell.layer.borderWidth = 2
                 cell.layer.masksToBounds = true
             } else {
