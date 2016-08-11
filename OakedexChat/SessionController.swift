@@ -40,8 +40,7 @@ class SessionController {
     
     static func handleLaunchCount() {
         guard let session = session else { return }
-        NSUserDefaults.standardUserDefaults().setInteger(session.lanuches, forKey: kLaunches)
+        NSUserDefaults.standardUserDefaults().setInteger(session.launches, forKey: kLaunches)
         NSUserDefaults.standardUserDefaults().setDouble(session.startTime, forKey: kLastLaunch)
     }
-    
 }

@@ -27,7 +27,7 @@ struct Session {
     let buildNumber: String = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String ?? "N/A"
     let bundleShortVersion: String = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String ?? "N/A"
     
-    var lanuches: Int = NSUserDefaults.standardUserDefaults().integerForKey(kLaunches)
+    var launches: Int = NSUserDefaults.standardUserDefaults().integerForKey(kLaunches) + 1
     var sessionTime: NSTimeInterval {
         if let endTime = endTime {
             return endTime - startTime
@@ -44,7 +44,7 @@ struct Session {
 extension Session {
     
     var jsonValue: [String:AnyObject] {
-        return [kStart:startTime, kEnd:endTime ?? "no end time", kDuration:sessionTime, kLaunches:lanuches, kBundleVersion: buildNumber, kVersionString: bundleShortVersion, kLastLaunch: timeSinceLastLaunch]
+        return [kStart:startTime, kEnd:endTime ?? "no end time", kDuration:sessionTime, kLaunches:launches, kBundleVersion: buildNumber, kVersionString: bundleShortVersion, kLastLaunch: timeSinceLastLaunch]
     }
     
     var jsonData: NSData? {
