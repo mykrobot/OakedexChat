@@ -10,25 +10,25 @@ import UIKit
 
 class PokedexResultViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    @IBOutlet weak var pokemonNameLabel: UILabel!
-    @IBOutlet weak var pokemonIDLabel: UILabel!
-    @IBOutlet weak var PokemonExperienceLabel: UILabel!
-    @IBOutlet weak var pokemonHeightLabel: UILabel!
-    @IBOutlet weak var pokemonWeightLabel: UILabel!
-    @IBOutlet weak var pokemonImageView: UIImageView!
-    @IBOutlet weak var pokeSearchBar: UISearchBar!
-    @IBOutlet weak var pokeBallActivityImage: UIImageView!
-    @IBOutlet weak var viewBackImage: UIImageView!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var movesButton: UIButton!
-    @IBOutlet weak var statsButton: UIButton!
+    @IBOutlet weak private var pokemonNameLabel: UILabel!
+    @IBOutlet weak private var pokemonIDLabel: UILabel!
+    @IBOutlet weak private var PokemonExperienceLabel: UILabel!
+    @IBOutlet weak private var pokemonHeightLabel: UILabel!
+    @IBOutlet weak private var pokemonWeightLabel: UILabel!
+    @IBOutlet weak private var pokemonImageView: UIImageView!
+    @IBOutlet weak private var pokeSearchBar: UISearchBar!
+    @IBOutlet weak private var pokeBallActivityImage: UIImageView!
+    @IBOutlet weak private var viewBackImage: UIImageView!
+    @IBOutlet weak private var typeLabel: UILabel!
+    @IBOutlet weak private var movesButton: UIButton!
+    @IBOutlet weak private var statsButton: UIButton!
     
-    var pokemon: Pokemon?
-    var moves: String?
-    var stats: String?
-    var baseStats:  String?
+    private var pokemon: Pokemon?
+    private var moves: String?
+    private var stats: String?
+    private var baseStats:  String?
     var searchTerm: String?
-    let boundRect = CGRectMake(0, 0, 1, 1)
+    private let boundRect = CGRectMake(0, 0, 1, 1)
     
     //MARK: - VC LifeCycle
     

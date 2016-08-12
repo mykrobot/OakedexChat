@@ -16,10 +16,8 @@
 import UIKit
 
 class MasterThreadsTableViewController: UITableViewController {
-    
-    var printCount = 0
-    
-    var threadsWithFellowTrainers: [Thread] = []
+
+    private var threadsWithFellowTrainers: [Thread] = []
     var currentUser: User? {
         return UserController.sharedController.currentUser
     }
@@ -53,8 +51,6 @@ class MasterThreadsTableViewController: UITableViewController {
                 self.threadsWithFellowTrainers = thread
                 UserController.sharedController.currentUser?.threadIDs = thread.flatMap({$0.identifier})
                 self.tableView.reloadData() // success
-                self.printCount += 1
-                print(self.printCount)
             })
         })
     }

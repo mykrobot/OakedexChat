@@ -10,8 +10,8 @@ import UIKit
 
 class CreditsViewController: UIViewController {
 
-    @IBOutlet weak var creditTextView: UITextView!
-    let creditString = "This app uses data and sprintes from the Pokémon series and video games. Some terminology from the Pokémon franchise is also used within the software itself. This is all intellectual property of Nintendo, Creatures, inc., and GAME FREAK, inc., and it is protected by various copyrights and trademarks. The author believes that the use of this intellectual property for a fan reference is covered by fair use and that the software is significantly impaired without said property included.\n\nImages from the Veekun database were used in this project (http://veekun.com)."
+    @IBOutlet weak private var creditTextView: UITextView!
+    private let creditString = "This app uses data and sprites from the Pokémon series and video games. Some terminology from the Pokémon franchise is also used within the software itself. This is all intellectual property of Nintendo, Creatures, inc., and GAME FREAK, inc., and it is protected by various copyrights and trademarks. The author believes that the use of this intellectual property for a fan reference is covered by fair use and that the software is significantly impaired without said property included.\n\nImages from the Veekun database were used in this project (http://veekun.com)."
     
     override func viewDidLoad() {
         super.viewDidLoad()

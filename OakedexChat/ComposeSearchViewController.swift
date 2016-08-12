@@ -10,14 +10,14 @@ import UIKit
 
 class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
-    @IBOutlet weak var fightOChatButton: UIBarButtonItem!
-    @IBOutlet weak var composeTableView: UITableView!
+    @IBOutlet weak private var fightOChatButton: UIBarButtonItem!
+    @IBOutlet weak private var composeTableView: UITableView!
     var searchController: UISearchController!
     
-    var thread: Thread?
-    var selectedTrainers: [User] = []
-    var selectedTrainersAsAString: [String] = []
-    var userDataSource: [User] = []
+    private var thread: Thread?
+    private var selectedTrainers: [User] = []
+    private var selectedTrainersAsAString: [String] = []
+    private var userDataSource: [User] = []
     
     // MARK: - ViewLifeCycle
     

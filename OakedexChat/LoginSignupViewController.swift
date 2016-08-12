@@ -10,23 +10,23 @@ import UIKit
 
 class LoginSignupViewController: UIViewController {
 
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signupButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var needAccountButton: UIButton!
-    @IBOutlet weak var alreadyHaveButton: UIButton!
-    @IBOutlet weak var termsAndConditionsButton: UIButton!
-    @IBOutlet weak var tappyTap: UITapGestureRecognizer!
+    @IBOutlet weak private var usernameTextField: UITextField!
+    @IBOutlet weak private var emailTextField: UITextField!
+    @IBOutlet weak private var passwordTextField: UITextField!
+    @IBOutlet weak private var signupButton: UIButton!
+    @IBOutlet weak private var loginButton: UIButton!
+    @IBOutlet weak private var needAccountButton: UIButton!
+    @IBOutlet weak private var alreadyHaveButton: UIButton!
+    @IBOutlet weak private var termsAndConditionsButton: UIButton!
+    @IBOutlet weak private var tappyTap: UITapGestureRecognizer!
     
     enum ButtonMode {
         case Signup
         case Login
     }
     
-    var mode: ButtonMode = .Login
-    var fieldsAreValid: Bool {
+    private var mode: ButtonMode = .Login
+    private var fieldsAreValid: Bool {
         get {
             switch mode {
             case .Signup:

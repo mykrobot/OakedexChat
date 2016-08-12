@@ -10,7 +10,7 @@ import UIKit
 
 class PopoverViewController: UIViewController {
 
-    @IBOutlet weak var popoverTextView: UITextView!
+    @IBOutlet weak private var popoverTextView: UITextView!
     
     var strings: String?
     

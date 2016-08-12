@@ -12,7 +12,7 @@ class AskOakTableViewController: UITableViewController {
 
     @IBOutlet weak var searchTermTextField: UITextField!
     
-    var searchTerm: String?
+    private var searchTerm: String?
 
     // MARK: - Action Buttons
     

@@ -10,8 +10,8 @@ import UIKit
 
 class MoreTableViewController: UITableViewController {
 
-    @IBOutlet weak var creditsCell: UITableViewCell!
-    @IBOutlet weak var logoutCell: UITableViewCell!
+    @IBOutlet weak private var creditsCell: UITableViewCell!
+    @IBOutlet weak private var logoutCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()

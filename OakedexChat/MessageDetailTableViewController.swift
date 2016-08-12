@@ -11,7 +11,7 @@ import UIKit
 class MessageDetailTableViewController: UITableViewController, UITextFieldDelegate {
     
     var thread: Thread?
-    var messages: [Message] = []
+    private var messages: [Message] = []
     
     @IBOutlet weak var messageTextField: UITextField!
     
