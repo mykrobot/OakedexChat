@@ -73,16 +73,6 @@ class ThreadController {
         var report = Report(threadID: threadID)
         report.save()
     }
-    
-    // NEVER USED.
-    static func deleteThread(thread: Thread) {
-        thread.delete()
-    }
-    
-    // NEVER USED.
-    static func orderThreads(threads: [Thread]) -> [Thread] {
-        return threads.sort({$0.0.identifier > $0.1.identifier})
-    }
 }
 
 
