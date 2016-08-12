@@ -47,7 +47,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
     }
     
     // MARK: - Configure Views
-    func setupViews() {
+    private func setupViews() {
         pokemonNameLabel.layer.cornerRadius = 8
         pokemonNameLabel.clipsToBounds = true
         let labels: [UILabel] = [pokemonIDLabel,pokemonWeightLabel,pokemonHeightLabel,PokemonExperienceLabel,typeLabel]
@@ -56,7 +56,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         configureButtons(buttons)
     }
     
-    func configureLabels(labels: [UILabel]) {
+    private func configureLabels(labels: [UILabel]) {
         for label in labels {
             label.layer.cornerRadius = 8
             label.clipsToBounds = true
@@ -66,7 +66,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         }
     }
     
-    func configureButtons(buttons: [UIButton]) {
+    private func configureButtons(buttons: [UIButton]) {
         for button in buttons {
             button.layer.cornerRadius = 8
             button.clipsToBounds = true
@@ -78,7 +78,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
     
     // MARK: - Animation
     
-    func rotateBro() {
+    private func rotateBro() {
         let rotateAnimate = CAKeyframeAnimation()
         rotateAnimate.keyPath = "position"
         rotateAnimate.path = CGPathCreateWithEllipseInRect(boundRect, nil)
@@ -102,7 +102,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         self.performSegueWithIdentifier("toStatsPopoverSegue", sender: self)
     }
     
-    func nameThatPokemon(searchTerm: String) {
+    private func nameThatPokemon(searchTerm: String) {
         rotateBro()
         pokeBallActivityImage.hidden = false
         PokemonController.getPokemon(searchTerm) { (pokemon) -> Void in
@@ -116,7 +116,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         }
     }
     
-    func unhideLabels() {
+    private func unhideLabels() {
         self.pokemonIDLabel.hidden = false
         self.PokemonExperienceLabel.hidden = false
         self.pokemonHeightLabel.hidden = false
@@ -127,7 +127,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         self.pokeBallActivityImage.hidden = true
     }
     
-    func setLabelText(pokeResult: Pokemon) {
+    private func setLabelText(pokeResult: Pokemon) {
         self.pokemonNameLabel.text = pokeResult.name.capitalizedString
         self.pokemonIDLabel.text = "  ID: \(pokeResult.id)"
         self.PokemonExperienceLabel.text = "  Exp: \(pokeResult.baseExp)"
@@ -137,7 +137,7 @@ class PokedexResultViewController: UIViewController, UIPopoverPresentationContro
         self.typeLabel.text = "  Type: \(pokeResult.types.joinWithSeparator(", "))"
     }
     
-    func setButtonText(pokeResult: Pokemon) {
+    private func setButtonText(pokeResult: Pokemon) {
         self.moves = "\(pokeResult.moves.joinWithSeparator(", "))"
         let statName = pokeResult.stats
         let baseStat = pokeResult.baseStats

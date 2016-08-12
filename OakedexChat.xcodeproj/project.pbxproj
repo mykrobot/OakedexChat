@@ -12,7 +12,6 @@
 		B480C6C81C9B35E400057146 /* AskOakTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */; };
 		B480C6CA1C9B453400057146 /* PokedexResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6C91C9B453400057146 /* PokedexResultViewController.swift */; };
 		B480C6CC1C9B66D700057146 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CB1C9B66D700057146 /* PopoverViewController.swift */; };
-		B480C6CE1C9B878C00057146 /* MissingNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CD1C9B878C00057146 /* MissingNoViewController.swift */; };
 		B480C6D01C9B8FC600057146 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6CF1C9B8FC600057146 /* AppearanceController.swift */; };
 		B480C6D21C9BAEBF00057146 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480C6D11C9BAEBF00057146 /* ColorPallete.swift */; };
 		B4E258471C8CB2E500AE8EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */; };
@@ -36,7 +35,6 @@
 		B4E2587C1C8CB44D00AE8EF4 /* PokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2587B1C8CB44D00AE8EF4 /* PokemonController.swift */; };
 		B4E2587E1C8D492D00AE8EF4 /* MasterThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2587D1C8D492C00AE8EF4 /* MasterThreadsTableViewController.swift */; };
 		B4E258801C8D499A00AE8EF4 /* MessageDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E2587F1C8D499A00AE8EF4 /* MessageDetailTableViewController.swift */; };
-		B4E258B71C8E31DE00AE8EF4 /* OakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258B61C8E31DE00AE8EF4 /* OakTableViewCell.swift */; };
 		B4E258B91C8E7E2800AE8EF4 /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E258B81C8E7E2800AE8EF4 /* LoginSignupViewController.swift */; };
 		B4F082A31D53D88B00D0210E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F082A21D53D88B00D0210E /* Session.swift */; };
 		B4F082A51D53D89900D0210E /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F082A41D53D89900D0210E /* SessionController.swift */; };
@@ -66,7 +64,6 @@
 		B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskOakTableViewController.swift; sourceTree = "<group>"; };
 		B480C6C91C9B453400057146 /* PokedexResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokedexResultViewController.swift; sourceTree = "<group>"; };
 		B480C6CB1C9B66D700057146 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
-		B480C6CD1C9B878C00057146 /* MissingNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingNoViewController.swift; sourceTree = "<group>"; };
 		B480C6CF1C9B8FC600057146 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		B480C6D11C9BAEBF00057146 /* ColorPallete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		B4E258431C8CB2E500AE8EF4 /* OakedexChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OakedexChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,7 +89,6 @@
 		B4E2587B1C8CB44D00AE8EF4 /* PokemonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonController.swift; sourceTree = "<group>"; };
 		B4E2587D1C8D492C00AE8EF4 /* MasterThreadsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterThreadsTableViewController.swift; sourceTree = "<group>"; };
 		B4E2587F1C8D499A00AE8EF4 /* MessageDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailTableViewController.swift; sourceTree = "<group>"; };
-		B4E258B61C8E31DE00AE8EF4 /* OakTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OakTableViewCell.swift; sourceTree = "<group>"; };
 		B4E258B81C8E7E2800AE8EF4 /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
 		B4F082A21D53D88B00D0210E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B4F082A41D53D89900D0210E /* SessionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
@@ -120,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B43963C31D5E0E6100AFBA23 /* OtherControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B480C6CF1C9B8FC600057146 /* AppearanceController.swift */,
+				B480C6D11C9BAEBF00057146 /* ColorPallete.swift */,
+			);
+			name = OtherControllers;
+			sourceTree = "<group>";
+		};
 		B4E2583A1C8CB2E500AE8EF4 = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E258461C8CB2E500AE8EF4 /* AppDelegate.swift */,
-				B480C6CF1C9B8FC600057146 /* AppearanceController.swift */,
-				B480C6D11C9BAEBF00057146 /* ColorPallete.swift */,
+				B43963C31D5E0E6100AFBA23 /* OtherControllers */,
 				B4F082A81D53D9C900D0210E /* Analytics  */,
 				B4E258601C8CB36200AE8EF4 /* Model */,
 				B4E2587A1C8CB42D00AE8EF4 /* ModelControllers */,
@@ -197,7 +201,6 @@
 			children = (
 				B4E2587D1C8D492C00AE8EF4 /* MasterThreadsTableViewController.swift */,
 				B4E2587F1C8D499A00AE8EF4 /* MessageDetailTableViewController.swift */,
-				B4E258B61C8E31DE00AE8EF4 /* OakTableViewCell.swift */,
 				B4E258B81C8E7E2800AE8EF4 /* LoginSignupViewController.swift */,
 				B4F0CADC1CB85070007408D8 /* TermsAndConditionsViewController.swift */,
 				B46D85491C907BEC00C2234D /* ComposeSearchViewController.swift */,
@@ -205,7 +208,6 @@
 				B480C6C71C9B35E400057146 /* AskOakTableViewController.swift */,
 				B480C6C91C9B453400057146 /* PokedexResultViewController.swift */,
 				B480C6CB1C9B66D700057146 /* PopoverViewController.swift */,
-				B480C6CD1C9B878C00057146 /* MissingNoViewController.swift */,
 				B4F0CAD61CB81D4F007408D8 /* MoreTableViewController.swift */,
 				B4F0CAD81CB81E8B007408D8 /* CreditsViewController.swift */,
 			);
@@ -296,11 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4F082A71D53D8AE00D0210E /* NetworkAnalyticsController.swift in Sources */,
-				B480C6CE1C9B878C00057146 /* MissingNoViewController.swift in Sources */,
 				B4E258791C8CB42100AE8EF4 /* NetworkController.swift in Sources */,
 				B4E258801C8D499A00AE8EF4 /* MessageDetailTableViewController.swift in Sources */,
 				B480C6C81C9B35E400057146 /* AskOakTableViewController.swift in Sources */,
-				B4E258B71C8E31DE00AE8EF4 /* OakTableViewCell.swift in Sources */,
 				B480C6CA1C9B453400057146 /* PokedexResultViewController.swift in Sources */,
 				B4E2587E1C8D492D00AE8EF4 /* MasterThreadsTableViewController.swift in Sources */,
 				B46D854A1C907BEC00C2234D /* ComposeSearchViewController.swift in Sources */,

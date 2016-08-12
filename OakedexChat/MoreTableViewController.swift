@@ -27,7 +27,7 @@ class MoreTableViewController: UITableViewController {
     
     // MARK: - Configure Views
     
-    func setupViews() {
+    private func setupViews() {
         creditsCell.layer.cornerRadius = 8
         creditsCell.layer.borderColor = UIColor.ashHatRed().CGColor
         creditsCell.layer.borderWidth = 2

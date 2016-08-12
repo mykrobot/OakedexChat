@@ -9,19 +9,15 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
-
+    
     var userResultsDataSource: [User] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userResultsDataSource.count
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("searchResultsCell", forIndexPath: indexPath)
         let users = userResultsDataSource[indexPath.row]
@@ -30,9 +26,7 @@ class SearchResultsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       // let sender = tableView.cellForRowAtIndexPath(indexPath)
-        
-        /////////////////////// COME BACK AND ADD THIS PERSON TO THE MESSAGE CONTACT LIST //////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // let sender = tableView.cellForRowAtIndexPath(indexPath)
+        // TODO: - COME BACK AND ADD THIS PERSON TO THE MESSAGE CONTACT LIST
     }
 }

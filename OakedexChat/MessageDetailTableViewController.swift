@@ -20,24 +20,26 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "75"
-        if let thread = thread {
-            if let identifier = thread.identifier {
-                ThreadController.observeMessageForThreadID(identifier, completion: { (message) -> Void in
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        if let message = message {
-                            self.messages = message.filter({$0.threadIdentifier == identifier})
-                            self.tableView.reloadData()
-                        }
-                    })
+        fetchAndObserve()
+    }
+    
+    private func fetchAndObserve() {
+        if let thread = thread, identifier = thread.identifier {
+            ThreadController.observeMessageForThreadID(identifier, completion: { (message) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if let message = message {
+                        self.messages = message.filter({$0.threadIdentifier == identifier})
+                        self.tableView.reloadData()
+                    }
                 })
-            }
+            })
         }
     }
-
+    
     // MARK: - Action Buttons
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
-            if let text = messageTextField.text, currentUser = UserController.sharedController.currentUser, thread = thread {
+        if let text = messageTextField.text, currentUser = UserController.sharedController.currentUser, thread = thread {
             ThreadController.createMessage(text, sender: currentUser, thread: thread, completion: { (message) -> Void in
                 print(message?.text)
                 self.messageTextField.text = ""
@@ -50,15 +52,15 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
         let alertController = UIAlertController(title: "Report Content", message: "Would you like to report this content as inappropriate or objectionable content?", preferredStyle: .ActionSheet)
         let reportAction = UIAlertAction(title: "Report", style: .Default) { (tappedSon) -> Void in
             if let thread = self.thread {
-              ThreadController.reportThread(thread)
+                ThreadController.reportThread(thread)
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alertController.addAction(reportAction)
         alertController.addAction(cancelAction)
-        self.presentViewController(alertController, animated: true, completion: nil) 
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
-
+    
     // MARK: - TextField Delegate Methods
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -67,28 +69,27 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
         }
         let newLength = (messageTextField.text!.characters.count + string.characters.count - range.length)
         if newLength <= 75 {
-            if newLength >= 65 {
-            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.ashHatRed()]
-            } else {
-                self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.blackColor()]
-            }
-        self.navigationItem.title = "\(75 - newLength)"
-            
+            handleCharacterCount(newLength)
         } else {
             self.navigationItem.title = "0"
         }
         return newLength <= 75
     }
     
+    private func handleCharacterCount(newLength: Int) {
+        if newLength >= 65 {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.ashHatRed()]
+        } else {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        }
+        self.navigationItem.title = "\(75 - newLength)"
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if !messages.isEmpty {
-            return messages.count
-        } else {
-            return 0
-        }
+        guard !messages.isEmpty else { return 0 }
+        return messages.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -99,15 +100,19 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
             if let user = user {
                 senderUserName = user.username
                 cell.textLabel?.text = "\(senderUserName): \(message.text)"
-                cell.layer.cornerRadius = 8
-                cell.contentView.layer.cornerRadius = 8
-                cell.layer.borderColor = UIColor.ashHatRed().CGColor
-                cell.layer.borderWidth = 2
-                cell.layer.masksToBounds = true
+                self.configureCellView(cell)
             } else {
                 cell.textLabel?.text = "Prof Oak: Oh, it looks like someone has fallen from the converation and can't get back up."
             }
         }
         return cell
+    }
+    
+    private func configureCellView(cell: UITableViewCell) {
+        cell.layer.cornerRadius = 8
+        cell.contentView.layer.cornerRadius = 8
+        cell.layer.borderColor = UIColor.ashHatRed().CGColor
+        cell.layer.borderWidth = 2
+        cell.layer.masksToBounds = true
     }
 }

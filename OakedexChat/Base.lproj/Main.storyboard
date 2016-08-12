@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="1080" y="-349"/>
         </scene>
-        <!--Test-->
+        <!--Master Threads Table View Controller-->
         <scene sceneID="CMA-rA-Iwh">
             <objects>
                 <tableViewController id="WjC-CB-igO" customClass="MasterThreadsTableViewController" customModule="OakedexChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profOakCell" id="r2p-EU-F9x" customClass="OakTableViewCell" customModule="OakedexChat" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profOakCell" id="r2p-EU-F9x">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2p-EU-F9x" id="Mcj-o7-r5m">
@@ -156,7 +156,7 @@
                             <outlet property="delegate" destination="WjC-CB-igO" id="D8w-SD-rbI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Test" id="3gg-la-CP4">
+                    <navigationItem key="navigationItem" id="3gg-la-CP4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Sp-gh-Lxx">
                             <connections>
                                 <segue destination="FnF-sL-HYN" kind="show" identifier="toComposeSegue" id="hGx-l3-r7G"/>
@@ -237,10 +237,10 @@
             </objects>
             <point key="canvasLocation" x="1828" y="-349"/>
         </scene>
-        <!--Missing No View Controller-->
+        <!--View Controller-->
         <scene sceneID="tl9-If-25s">
             <objects>
-                <viewController id="9qB-QO-5Nf" customClass="MissingNoViewController" customModule="OakedexChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9qB-QO-5Nf" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gxw-FS-yas"/>
                         <viewControllerLayoutGuide type="bottom" id="t6C-4B-JDr"/>

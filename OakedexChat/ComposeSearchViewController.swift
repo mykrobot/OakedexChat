@@ -14,7 +14,6 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var composeTableView: UITableView!
     var searchController: UISearchController!
     
-    
     var thread: Thread?
     var selectedTrainers: [User] = []
     var selectedTrainersAsAString: [String] = []
@@ -24,12 +23,16 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Select Trainers"
-        fightOChatButton.enabled = false
         if let currentUser = UserController.sharedController.currentUser {
             selectedTrainers.append(currentUser)
             selectedTrainersAsAString.append(currentUser.username)
         }
+        configureView()
+    }
+    
+    private func configureView() {
+        self.navigationItem.title = "Select Trainers"
+        fightOChatButton.enabled = false
         let backItem = UIBarButtonItem()
         backItem.title = "Run"
         navigationItem.backBarButtonItem = backItem
@@ -55,7 +58,6 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    
     // MARK: - TableView Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,12 +68,16 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
         let cell = tableView.dequeueReusableCellWithIdentifier("allUsersCell", forIndexPath: indexPath)
         let user = userDataSource[indexPath.row]
         cell.textLabel?.text = user.username
+        configureCellView(cell)
+        return cell
+    }
+    
+    func configureCellView(cell: UITableViewCell) {
         cell.layer.cornerRadius = 8
         cell.contentView.layer.cornerRadius = 8
         cell.layer.borderColor = UIColor.ashHatRed().CGColor
         cell.layer.borderWidth = 2
         cell.layer.masksToBounds = true
-        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -94,33 +100,26 @@ class ComposeSearchViewController: UIViewController, UITableViewDataSource, UITa
             guard let resultsController = searchController.searchResultsController as? SearchResultsTableViewController else { return }
             resultsController.userResultsDataSource = filteredUsers
             resultsController.tableView.reloadData()
-            
-
         }
     }
     
-    func setUpSearchController() {
+    private func setUpSearchController() {
        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SearchReultsTVC")
-        
         searchController = UISearchController(searchResultsController: resultsController)
         searchController.searchResultsUpdater = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search for users"
-        
-        
         composeTableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
-        
     }
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "composeToThread" {
-            let messagesDetailTVC = segue.destinationViewController as! MessageDetailTableViewController
+            let messagesDetailTVC = segue.destinationViewController as? MessageDetailTableViewController
             if let thread = thread {
-                messagesDetailTVC.thread = thread
+                messagesDetailTVC?.thread = thread
             }
         }
     }

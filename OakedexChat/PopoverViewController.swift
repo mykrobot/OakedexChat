@@ -14,12 +14,12 @@ class PopoverViewController: UIViewController {
     
     var strings: String?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        configureView()
+    }
+    
+    private func configureView() {
         self.preferredContentSize = CGSize(width: 200, height: 200)
         popoverTextView.layer.cornerRadius = 8
         popoverTextView.clipsToBounds = true

@@ -54,14 +54,7 @@ class LoginSignupViewController: UIViewController {
     @IBAction func signupButtonTapped(sender: AnyObject) {
         mode = .Signup
         if fieldsAreValid {
-            UserController.createUser(emailTextField.text ?? "", password: passwordTextField.text ?? "", username: usernameTextField.text ?? "", completion: { (success, user) -> Void in
-                if success {
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                    
-                } else {
-                    self.presentValidationAlertWithtitle("Signup Unsuccessful", message: "Please try again")
-                }
-            })
+            handleSignupValidFields()
         } else {
             self.presentValidationAlertWithtitle("Missing Account Info", message: "Please try again, making sure to fill out all fields.")
         }
@@ -70,19 +63,33 @@ class LoginSignupViewController: UIViewController {
     @IBAction func loginButtonTapped(sender: AnyObject) {
         mode = .Login
         if fieldsAreValid {
-            UserController.authenticateUser(emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: { (success, user) -> Void in
-                if success {
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                } else {
-                    self.presentValidationAlertWithtitle("Login Unsuccessful", message: "Please try again")
-                }
-            })
+            handleLoginValidFields()
         } else {
             self.presentValidationAlertWithtitle("Missing Login Info", message: "Make sure that your email and password fields are both filled in correctly.")
         }
     }
     
-    func presentValidationAlertWithtitle(title: String, message: String) {
+    private func handleSignupValidFields() {
+        UserController.createUser(emailTextField.text ?? "", password: passwordTextField.text ?? "", username: usernameTextField.text ?? "", completion: { (success, user) -> Void in
+            if success {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                self.presentValidationAlertWithtitle("Signup Unsuccessful", message: "Please try again")
+            }
+        })
+    }
+    
+    private func handleLoginValidFields() {
+        UserController.authenticateUser(emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: { (success, user) -> Void in
+            if success {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                self.presentValidationAlertWithtitle("Login Unsuccessful", message: "Please try again")
+            }
+        })
+    }
+    
+    private func presentValidationAlertWithtitle(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let alertAction = UIAlertAction(title: "OK", style: .Destructive, handler: nil)
         alertController.addAction(alertAction)
@@ -109,7 +116,7 @@ class LoginSignupViewController: UIViewController {
 
     // MARK: - View Modes
     
-    func changeToLoginView() {
+    private func changeToLoginView() {
         loginButton.hidden = false
         needAccountButton.hidden = false
         alreadyHaveButton.hidden = true
@@ -117,7 +124,7 @@ class LoginSignupViewController: UIViewController {
         signupButton.hidden = true
     }
     
-    func changeToSignupView() {
+    private func changeToSignupView() {
         signupButton.hidden = false
         needAccountButton.hidden = true
         alreadyHaveButton.hidden = false
@@ -127,7 +134,7 @@ class LoginSignupViewController: UIViewController {
     
     // MARK: - Animations
     
-    func bringOn() {
+    private func bringOn() {
         UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: {
             self.usernameTextField.alpha = 1
             self.signupButton.alpha = 1
@@ -137,7 +144,7 @@ class LoginSignupViewController: UIViewController {
             }, completion: nil)
     }
     
-    func takeOff() {
+    private func takeOff() {
         UIView.animateWithDuration(0.5, delay: 0.2, options: [], animations: {
             self.usernameTextField.alpha = 0
             self.signupButton.alpha = 0
