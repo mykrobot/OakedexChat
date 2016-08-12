@@ -67,7 +67,7 @@ class MessageDetailTableViewController: UITableViewController, UITextFieldDelega
         if range.length + range.location > messageTextField.text?.characters.count {
             return false
         }
-        let newLength = (messageTextField.text!.characters.count + string.characters.count - range.length)
+        let newLength = ((messageTextField.text?.characters.count ?? 0) + string.characters.count - range.length)
         if newLength <= 75 {
             handleCharacterCount(newLength)
         } else {

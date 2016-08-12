@@ -75,8 +75,9 @@ class UserController {
     }
     
     static func removeThreadFromUser(thread: Thread) {
-        let index = UserController.sharedController.currentUser?.threadIDs.indexOf(thread.identifier!)
-        UserController.sharedController.currentUser?.threadIDs.removeAtIndex(index!)
+        guard let identifier = thread.identifier,
+            index = UserController.sharedController.currentUser?.threadIDs.indexOf(identifier) else { return }
+        UserController.sharedController.currentUser?.threadIDs.removeAtIndex(index)
         UserController.sharedController.currentUser?.save()
     }
     
